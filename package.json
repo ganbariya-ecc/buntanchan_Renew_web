@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx tailwindcss -i ./src/style.css -o ./public/**/*.css --watch"
-  
+    "dev": "npx tailwindcss -i ./src/style.css -o ./public/style.css --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "tailwindcss": "^3.4.9"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0"
   }
 }

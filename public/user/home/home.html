@@ -8,9 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="./style/calendar.css">
     <title>user_home</title>
 </head>
-<body class="font-main bg-main-color">
+<body class="font-main bg-main-color overflow-x-hidden">
     <!-- グレイレイヤー -->
     <!-- <div class="overlay">
     </div> -->
@@ -55,21 +56,23 @@
     <main>
        <!-- 今日の予定表示 -->
        <div>
-        <h2 class="text-4xl mt-6 ml-14 text-green" id="today_counter">〇月〇日</h2>
+        <h2 class="text-title mt-6 ml-14 text-green" id="today_counter">〇月〇日</h2>
         <div
-            class="flex-none border-main-color bg-sub-color border-4 mt-16 w-4/5 mr-auto ml-auto h-36 items-center rounded-3xl p-3">
-            <p class="text-4xl m-1 text-green">Tasks today</p>
-            <p class="text-5xl ml-4 mt-5" id="today_tasks">残り〇個</p>
+            class="flex-none border-main-color bg-sub-color border-4  w-4/5 mx-auto  items-center rounded-3xl p-3">
+            <p class="text-sub m-1 text-green">Tasks today</p>
+            <p class="text-sub ml-4 mt-5" id="today_tasks">残り〇個</p>
         </div>
     </div>
     </div>
     <!-- カレンダー -->
     <div class="cal-center">
-        <div class="cal-navi flex justify-around">
+        <div class="cal-navi flex justify-between items-center">
+            <div id="calendar" class=" text-sub">
+            </div>
         </div>
-        <div id="calendar" class="mt-10 text-4xl">
-        </div>
+        
     </div>
     </main>
+    <script src="./sqript/calendar.js"></script>
 </body>
 </html>

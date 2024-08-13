@@ -3,15 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../.././style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
     <title>user_home</title>
 </head>
-<body>
-    <header class="bg-red-400">
-        <h1>user_home</h1>
+<body class="box-border font-coment bg-main-color">
+    <!-- グレイレイヤー -->
+    <div class="overlay">
+    </div>
+
+    <!-- header要素 -->
+    <header class="h-40  flex items-center">
+        <!-- ハンバーガーメニュー -->
+        <button type="button" class="btn js-btn">
+            <span class="btn-line"></span>
+        </button>
+
+        <!-- メニューオーバーレイ -->
+        <!-- <nav>
+            <ul class="menu text-left lex-1 flex flex-col">
+                <li class="menu-list"><a href="#"
+                        class="text-9xl text-main-font-color pt-24 pb-2 px-14 mb-32 block font-yusei-magic">ぶんたん</a>
+                </li>
+                <li class="menu-list"><a href="#"
+                        class=" text-stone-600 text-5xl py-10 px-24 block hover:text-orange-300">
+                        <i class="material-icons text-main-font-color ">new_releases</i>
+                        ポイント</a></li>
+                <li class="menu-list"><a href="#"
+                        class=" text-stone-600 text-5xl py-10 px-24 block hover:text-orange-300">
+                        <i class="material-icons text-main-font-color">task</i>
+                        タスク管理</a></li>
+                <li class="flex-grow"></li>
+                <li class="menu-list"><a href="#"
+                        class=" text-stone-600 text-5xl py-10 px-24 block hover:text-orange-300">
+                        <i class="material-icons text-main-font-color">logout</i>
+                        ログアウト</a></li>
+            </ul>
+        </nav> -->
+
+        <!-- iconとalarmの画像配置 -->
+        <div class="flex justify-center absolute right-3">
+            <!-- alarm icon 変更しました -->
+            <span id="noti icons"><i class="material-icons text-green  py-0 px-2">notifications</i></span>
+            <img class="w-24 h-24 bg-white rounded-full" src="" alt="icon" id="UserIcon" />
+        </div>
     </header>
+
     <main>
-        <h1>user_home</h1>
+       <!-- 今日の予定表示 -->
+       <div class="mt-24">
+        <h2 class="text-6xl mt-6 ml-14 text-green" id="today_counter">〇月〇日</h2>
+        <div
+            class="flex-none border-main-color bg-sub-color border-4 mt-16 w-4/5 mr-auto ml-auto h-36 items-center rounded-3xl p-3">
+            <p class="text-4xl m-1 text-green">Tasks today</p>
+            <p class="text-5xl ml-4 mt-5" id="today_tasks">残り〇個</p>
+        </div>
+    </div>
+    </div>
+    <!-- カレンダー -->
+    <div class="cal-center">
+        <div class="cal-navi flex justify-around">
+        </div>
+        <div id="calendar" class="mt-10 text-4xl">
+        </div>
+    </div>
     </main>
 </body>
 </html>

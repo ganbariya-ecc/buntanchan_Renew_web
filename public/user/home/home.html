@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css">
     <title>user_home</title>
 </head>
-<body class="box-border font-coment bg-main-color">
+<body class="font-main bg-main-color">
     <!-- グレイレイヤー -->
-    <div class="overlay">
-    </div>
+    <!-- <div class="overlay">
+    </div> -->
 
     <!-- header要素 -->
-    <header class="h-40  flex items-center">
-        <!-- ハンバーガーメニュー -->
-        <button type="button" class="btn js-btn">
+    <header class="h-12  flex items-center">
+        <!-- ハンバーガーメニューのボタン -->
+        <!-- <button type="button" class="btn js-btn">
             <span class="btn-line"></span>
-        </button>
+        </button> -->
 
-        <!-- メニューオーバーレイ -->
+        <!-- ハンバーガーメニュー -->
         <!-- <nav>
             <ul class="menu text-left lex-1 flex flex-col">
                 <li class="menu-list"><a href="#"
@@ -43,17 +45,17 @@
         </nav> -->
 
         <!-- iconとalarmの画像配置 -->
-        <div class="flex justify-center absolute right-3">
-            <!-- alarm icon 変更しました -->
-            <span id="noti icons"><i class="material-icons text-green  py-0 px-2">notifications</i></span>
-            <img class="w-24 h-24 bg-white rounded-full" src="" alt="icon" id="UserIcon" />
+        <div class="flex items-center m-1 gap-2 absolute right-1">
+            <!-- TODO: 通知アイコン spanタグわからん -->
+            <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
+            <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon" />
         </div>
     </header>
 
     <main>
        <!-- 今日の予定表示 -->
-       <div class="mt-24">
-        <h2 class="text-6xl mt-6 ml-14 text-green" id="today_counter">〇月〇日</h2>
+       <div>
+        <h2 class="text-4xl mt-6 ml-14 text-green" id="today_counter">〇月〇日</h2>
         <div
             class="flex-none border-main-color bg-sub-color border-4 mt-16 w-4/5 mr-auto ml-auto h-36 items-center rounded-3xl p-3">
             <p class="text-4xl m-1 text-green">Tasks today</p>

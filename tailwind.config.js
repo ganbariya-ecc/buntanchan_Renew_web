@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       // フォントファミリー設定
     fontFamily: {
-      'coment': ['"Kiwi Maru"', ...defaultTheme.fontFamily.sans],
+      'main': ['"Kiwi Maru"', ...defaultTheme.fontFamily.sans],
       'title': ['"Yusei Magic"', ...defaultTheme.fontFamily.sans],
     },
     // 色設定

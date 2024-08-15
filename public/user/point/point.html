@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ポイント管理</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body class="bg-main-color font-coment">
+    <!-- header要素 -->
+    <header class="h-12 p-3 flex items-center">
+
+        <!-- iconとalarmの画像配置 -->
+        <div class="flex items-center m-2 gap-2 absolute right-1">
+            <!-- TODO: 通知アイコン spanタグわからん -->
+            <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
+            <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon" />
+        </div>
+    </header>
+
+    <main>
+        <!-- タイトル -->
+        <h1 class="text-8xl mt-24 ml-14 tracking-widest text-main-font-color font-title">ポイント</h1>
+        <!-- ポイント表示　-->
+        <div class="flex items-center justify-center h-96">
+            <p id="points" class="text-center text-4xl"><span id="points-span" class="text-8xl">ポイント</span>pt</p>
+        </div>
+        <!-- ランキング -->
+        <div
+            class="flex flex-col items-center bg-sub-color border-4 border-white w-4/5 mb-20 mr-auto ml-auto rounded-3xl">
+            <select
+                class="text-6xl tracking-widest rounded-lg w-8/12 text-center text-main-font-color bg-orange-50 mt-10">
+                <!-- <option value="monthly">ランキング/月間</option>
+                <option value="weekly">ランキング/週間</option> -->
+                <option value="all">ランキング</option>
+            </select>
+            <!-- ランキングコンテナ -->
+            <div id="ranking" class="w-4/5 h-[50dvh] mt-10 mr-auto ml-auto overflow-y-scroll">
+                <!-- ランキングの表示-->
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

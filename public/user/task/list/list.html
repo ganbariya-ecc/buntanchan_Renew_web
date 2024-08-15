@@ -8,56 +8,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../../style.css">
     </head>
-    
+
     <body class="bg-main-color font-coment">
-        <!-- グレイレイヤー -->
-        <div class="overlay">
+        
+       <!-- header要素 -->
+    <header class="h-12 p-3 flex items-center">
+
+        <!-- iconとalarmの画像配置 -->
+        <div class="flex items-center m-2 gap-2 absolute right-1">
+            <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
+            <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon" />
         </div>
-
-        <!-- header要素 -->
-        <header class="h-40  flex items-center">
-            <!-- ハンバーガーメニュー -->
-            <button type="button" class="btn js-btn">
-                <span class="btn-line"></span>
-            </button>
-
-            <!-- メニューオーバーレイ -->
-            <nav>
-                <ul class="menu text-left lex-1 flex flex-col">
-                    <li class="menu-list"><a href="#"
-                            class="text-9xl text-main-font-color pt-24 pb-2 px-14 mb-32 block font-yusei-magic">ぶんたん</a></li>
-                    <li class="menu-list"><a href="#"
-                            class=" text-stone-600 text-5xl py-10 px-24 block hover:text-orange-300">
-                            <i class="material-icons text-main-font-color ">new_releases</i>
-                            ポイント</a></li>
-                    <li class="menu-list"><a href="./tasks/task_list.html"
-                            class=" text-stone-600 text-5xl py-10 px-24 block hover:text-orange-300">
-                            <i class="material-icons text-main-font-color ">task</i>
-                            タスク管理</a></li>
-                    <li class="menu-list"><a href="#"
-                            class=" text-stone-600 text-5xl py-10 px-24 block hover:text-orange-300">
-                            <i class="material-icons text-main-font-color ">group</i>
-                            グループ管理</a></li>
-                    <li class="flex-grow"></li>
-                    <li class="menu-list"><a href="#"
-                            class=" text-stone-600 text-5xl py-10 px-24 block hover:text-orange-300">
-                            <i class="material-icons text-main-font-color ">settings</i>
-                            設定</a></li>
-                    <li class="menu-list"><a href="#"
-                            class=" text-stone-600 text-5xl py-10 px-24 mb-32 block hover:text-orange-300">
-                            <i class="material-icons text-main-font-color ">logout</i>
-                            ログアウト</a></li>
-                </ul>
-            </nav>
-
-            <!-- iconとalarmの画像配置 -->
-            <div class="flex justify-center absolute right-3">
-                <!-- <img class="w-24 h-24  bg-white rounded-full mr-6 mt-0" src="/frontend/images/alarm.png" alt="alarm" /> -->
-                <!-- alarm icon 変更しました -->
-                <span id="noti icons"><i class="material-icons text-main-font-color  py-0 px-2">notifications</i></span>
-                <img class="w-24 h-24 bg-white rounded-full" src="/frontend/images/icon.png" alt="icon" />
-            </div>
-        </header>
+    </header>
         <!-- main要素 -->
         <main>
             <!--　見出し　-->

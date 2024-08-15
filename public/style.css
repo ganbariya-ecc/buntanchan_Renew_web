@@ -764,16 +764,16 @@ video {
   width: 80%;
 }
 
+.w-8 {
+  width: 2rem;
+}
+
 .w-8\/12 {
   width: 66.666667%;
 }
 
 .w-auto {
   width: auto;
-}
-
-.w-8 {
-  width: 2rem;
 }
 
 .flex-none {

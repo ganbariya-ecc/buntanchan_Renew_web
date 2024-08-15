@@ -17,7 +17,7 @@ module.exports = {
       },
       // スクリーン幅設定
       screens: {
-        'title': '256px',
+        'title_max': '768px',
         'sub': '128x',
         
       },

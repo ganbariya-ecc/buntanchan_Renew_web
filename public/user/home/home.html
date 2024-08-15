@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="./style/calendar.css">
     <title>user_home</title>
 </head>
+
 <body class="font-main bg-main-color overflow-x-hidden">
     <!-- グレイレイヤー -->
     <!-- <div class="overlay">
@@ -45,6 +47,7 @@
             </ul>
         </nav> -->
 
+        <!-- TODO: icon size -->
         <!-- iconとalarmの画像配置 -->
         <div class="flex items-center m-2 gap-2 absolute right-1">
             <!-- TODO: 通知アイコン spanタグわからん -->
@@ -54,25 +57,25 @@
     </header>
 
     <main class="flex-col items-end mt-20 ">
-       <!-- 今日の予定表示 -->
-       <div>
-        <h2 class="text-title  ml-14 text-green" id="today_counter">〇月〇日</h2>
-        <div
-            class="flex-none border-white bg-sub-color border-4  w-4/5 mx-auto  items-center rounded-2xl p-2">
-            <p class="text-sub m-1 text-green">Tasks today</p>
-            <p class="text-sub ml-4 mt-5" id="today_tasks">タスク残り⚪︎⚪︎個</p>
-        </div>
-    </div>
-    </div>
-    <!-- カレンダー -->
-    <div class="cal-center ">
-        <div class="cal-navi flex justify-between items-center">
-            <div id="calendar" class=" text-sub">
+        <!-- 今日の予定表示 -->
+        <div>
+            <h2 class="text-title  ml-14 text-green" id="today_counter">〇月〇日</h2>
+            <div class="flex-none border-white bg-sub-color border-4  w-4/5 mx-auto  items-center rounded-2xl p-2">
+                <p class="text-sub m-1 text-green">Tasks today</p>
+                <p class="text-sub ml-4 mt-5" id="today_tasks">タスク残り⚪︎⚪︎個</p>
             </div>
         </div>
-        
-    </div>
+        </div>
+        <!-- カレンダー -->
+        <div class="cal-center ">
+            <div class="cal-navi flex justify-between items-center">
+                <div id="calendar" class=" text-sub">
+                </div>
+            </div>
+
+        </div>
     </main>
     <script src="./sqript/calendar.js"></script>
 </body>
+
 </html>

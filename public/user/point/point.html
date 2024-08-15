@@ -16,18 +16,16 @@
 
         <!-- iconとalarmの画像配置 -->
         <div class="flex items-center m-2 gap-2 absolute right-1">
-            <!-- TODO: 通知アイコン spanタグわからん -->
             <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
             <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon" />
         </div>
     </header>
-
-    <main>
+    <main class="flex-col items-end mt-20">
         <!-- タイトル -->
-        <h1 class="text-8xl mt-24 ml-14 tracking-widest text-main-font-color font-title">ポイント</h1>
+        <h1 class="text-title ml-14 text-green">ポイント</h1>
         <!-- ポイント表示　-->
-        <div class="flex items-center justify-center h-96">
-            <p id="points" class="text-center text-4xl"><span id="points-span" class="text-8xl">ポイント</span>pt</p>
+        <div class="flex items-center justify-center">
+            <p id="points" class="text-title ml-14" id="today_counter"><span id="points-span">ポイント</span>pt</p>
         </div>
         <!-- ランキング -->
         <div

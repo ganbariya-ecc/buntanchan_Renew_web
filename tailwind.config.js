@@ -19,6 +19,8 @@ module.exports = {
       fontSize: {
         'title': '80px',
         'sub': '64px',
+        'text': '48px',
+        
 
       },
     },

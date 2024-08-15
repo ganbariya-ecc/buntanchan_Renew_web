@@ -6,7 +6,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../../style.css">
+        <link rel="stylesheet" href="../../../style.css">
     </head>
 
     <body class="bg-main-color font-coment">
@@ -17,47 +17,36 @@
         <!-- iconとalarmの画像配置 -->
         <div class="flex items-center m-2 gap-2 absolute right-1">
             <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
-            <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon" />
+            <img class="w-12 h-auto bg-white rounded-full" src="../../images/icon.png" alt="icon" id="UserIcon" />
         </div>
     </header>
         <!-- main要素 -->
-        <main>
+        <main class="flex-col items-end mt-40">
             <!--　見出し　-->
             <div class="flex justify-between mt-6">
-                <h1 class="text-7xl text-main-font-color tracking-widest font-title mt-6 ml-14 mb-8">お手伝いリスト</h1>
+                <h1 class="text-title mt-6 ml-14 text-green font-comment">お手伝いリスト</h1>
             </div>
             <!-- タスクの表示-->
-            <div id="display-container" class="bg-orange-50 border-white border-4 mt-4 mb-5 w-11/12  pt-10 pr-12 pl-12 pb-16 mx-auto h-auto rounded-3xl">
-                <div class="relative flex h-32 mx-auto">
-                <select name="user" required id="filter_user"class="w-8/12 h-20 rounded-full text-3xl bg-white text-center m-auto">
-                </select>
-                <span class="material-icons absolute top-10 right-16 text-main-font-color" style="font-size: 60px;">expand_circle_down</span>
-                </div>
+            <div id="display-container"
+                class="h-[40dvh] bg-sub-color mt-4 mb-4 w-4/5  pt-10 px-12 pb-16 mx-auto rounded-3xl overflow-y-scroll">
                 <!--タスクが追加される-->
-                <div id="task-container" class="bg-orange-50 border-orange-50 border-4 mt-5 mb-5 w-11/12 mr-auto ml-auto max-h-[40dvh] rounded-3xl overflow-y-scroll"></div>
-
+                <div id="task-container"
+                    class="bg-sub-color my-5 w-4/5  mx-auto rounded-3xl">
+                </div>
             </div>
             <!--　見出し　-->
             <div class="flex justify-between mt-9">
-                <h1 class="text-7xl text-main-font-color tracking-widest font-title mt-6 ml-14 mb-8">もっと手伝う・・・</h1>
+                <h1 class="text-title mt-6 ml-14 text-green font-comment">もっと手伝う・・・</h1>
+                <!-- add circle -->
             </div>
             <!-- タスクの表示-->
-            <div id="more-display-container" class="bg-orange-50 border-white border-4 mt-4 mb-5 w-11/12 mx-auto h-auto rounded-3xl overflow-y-scroll">
+            <div id="more-display-container"
+                class="h-[10dvh] bg-sub-color mt-4 mb-5 w-4/5  pt-10 px-12 pb-16 mx-auto  rounded-3xl overflow-y-scroll">
                 <!--タスクが追加される-->
-                <div id="more-task-container" class="bg-orange-50 border-orange-50 border-4 w-11/12 mr-auto ml-auto min-h-56 rounded-3xl"></div>
+                <div id="more-task-container"
+                    class="bg-sub-color my-5 w-4/5 mx-auto h-auto rounded-3xl">
+                </div>
             </div>
         </main>
-        <!--script要素 -->
-            <!-- 追記しました　-->
-            <script src="/statics/app/appjs/loader.js"></script>
-            <script src="/statics/app/appjs/authsdk.js"></script>
-            <script src="/statics/app/appjs/appsdk.js"></script>
-            <script src="/statics/app/appjs/member.js"></script>
-            <script src="/statics/app/appjs/Tasks.js"></script>
-            <!-- <script src="./scripts/task_list.js"></script> -->
-            <link rel="stylesheet" href="/frontend/src/css/setall.css" />
-            <!-- 追加したjsファイル　-->
-            <script src="/frontend/src/js/hamburger_menu.js"></script>
-            <script src="/frontend/src/js/task_list.js"></script>
     </body>
 </html>

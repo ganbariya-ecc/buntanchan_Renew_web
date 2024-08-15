@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>詳細画面</title>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../../../style.css">
-    </head>
 
-    <body class="bg-main-color font-coment">
-        
-       <!-- header要素 -->
+<head>
+    <meta charset="UTF-8">
+    <title>詳細画面</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+
+<body class="bg-main-color font-coment">
+
+    <!-- header要素 -->
     <header class="h-12 p-3 flex items-center">
 
         <!-- iconとalarmの画像配置 -->
@@ -20,33 +21,48 @@
             <img class="w-12 h-auto bg-white rounded-full" src="../../images/icon.png" alt="icon" id="UserIcon" />
         </div>
     </header>
-        <!-- main要素 -->
-        <main class="flex-col items-end mt-40">
-            <!--　見出し　-->
-            <div class="flex justify-between mt-6">
-                <h1 class="text-title mt-6 ml-14 text-green font-comment">お手伝いリスト</h1>
+    <!-- main要素 -->
+    <main class="flex-col items-end mt-40">
+        <!-- タスクタイトル表示 -->
+        <div class="flex justify-center items-end mt-14 pb-4">
+            <h1 class="text-title font-bold flex justify-center items-end text-green">タスクのタイトル</h1>
+        </div>
+        <!-- 現在のステータスを表示 -->
+        <div class="flex border-sub-color bg-sub-color border-4 mt-16 mx-auto w-4/5 h-56 items-center rounded-3xl">
+            <span class="material-icons text-green ml-12" style="font-size: 90px;">notifications</span>
+            <span class="ml-6" id="status-message">ステータスメッセージの表示</span>
+        </div>
+        <!-- タスクの詳細コンテナ　-->
+        <div class="task-info-container flex flex-col items-center mt-10 mx-16 px-8 w-9/12 h-4/6">
+            <!-- タスクの残り時間の表示 -->
+            <div class="pb-10" id="countdown">
+                <span class="text-red-500" id="countdown_time"></span>
             </div>
-            <!-- タスクの表示-->
-            <div id="display-container"
-                class="h-[40dvh] bg-sub-color mt-4 mb-4 w-4/5  pt-10 px-12 pb-16 mx-auto rounded-3xl overflow-y-scroll">
-                <!--タスクが追加される-->
-                <div id="task-container"
-                    class="bg-sub-color my-5 w-4/5  mx-auto rounded-3xl">
-                </div>
+            <!-- タスクのイメージ画像　-->
+            <div class="rounded-3xl overflow-hidden h-3/6">
+                <img src="./image/404.jpg" alt="Task Image" class="w-full h-full" id="task-image" />
             </div>
-            <!--　見出し　-->
-            <div class="flex justify-between mt-9">
-                <h1 class="text-title mt-6 ml-14 text-green font-comment">もっと手伝う・・・</h1>
-                <!-- add circle -->
+            <!-- メッセージコンテナ -->
+            <div class="mt-14 h-48 w-full overflow-scroll border-4 border-sub-color bg-sub-color p-2 rounded-3xl">
+                <p class="leading-normal tracking-widest" id="task-message">タスクに対するメッセージを表示</p>
             </div>
-            <!-- タスクの表示-->
-            <div id="more-display-container"
-                class="h-[10dvh] bg-sub-color mt-4 mb-5 w-4/5  pt-10 px-12 pb-16 mx-auto  rounded-3xl overflow-y-scroll">
-                <!--タスクが追加される-->
-                <div id="more-task-container"
-                    class="bg-sub-color my-5 w-4/5 mx-auto h-auto rounded-3xl">
-                </div>
-            </div>
-        </main>
-    </body>
+        </div>
+        <!-- ボタン　-->
+        <div class="flex justify-between mt-8">
+            <button
+                class="bg-main-font-color border-b-4 border-sub-color shadow-lg w-80 h-32 border-none rounded-3xl text-5xl text-center mr-20"
+                id="back_button">戻る</button>
+            <button
+                class="bg-main-font-color border-b-4 border-sub-color shadow-lg w-80 h-32 border-none rounded-3xl text-5xl text-center"
+                id="submit_button">終わり</button>
+        </div>
+        <div class="flex justify-between mt-10">
+            <button
+                class="bg-main-font-color border-b-4 border-sub-color shadow-lg w-80 h-32 border-none rounded-3xl text-5xl text-center"
+                id="delete_button">削除</button>
+            <button class="end-btn text-center" style="opacity: 0;"></button>
+        </div>
+    </main>
+</body>
+
 </html>

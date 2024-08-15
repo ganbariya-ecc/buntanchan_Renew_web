@@ -15,11 +15,11 @@ module.exports = {
         'sub-color': 'rgba(255 247 237)',
         'green': '#4AB4A1',
       },
-      // スクリーン幅設定
-      screens: {
-        'title_max': '768px',
-        'sub': '128x',
-        
+
+      fontSize: {
+        'title': '80px',
+        'sub': '64px',
+
       },
     },
   },

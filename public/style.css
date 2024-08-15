@@ -582,6 +582,10 @@ video {
   right: 0.75rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .m-1 {
   margin: 0.25rem;
 }
@@ -736,6 +740,10 @@ video {
   height: max-content;
 }
 
+.h-64 {
+  height: 16rem;
+}
+
 .w-1 {
   width: 0.25rem;
 }
@@ -774,6 +782,11 @@ video {
 
 .w-auto {
   width: auto;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .flex-none {
@@ -986,6 +999,14 @@ video {
 .text-9xl {
   font-size: 8rem;
   line-height: 1;
+}
+
+.text-sub {
+  font-size: 64px;
+}
+
+.text-title {
+  font-size: 80px;
 }
 
 .text-xl {

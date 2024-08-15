@@ -14,12 +14,15 @@ module.exports = {
         'main-color': 'rgba(246, 219, 186, 0.5)',
         'sub-color': 'rgba(255 247 237)',
         'green': '#4AB4A1',
+        'skyblue': '#BCE6FF',
+        'white': '#FFFFFF',
       },
 
       fontSize: {
         'title': '80px',
         'sub': '64px',
         'text': '48px',
+        'comment': '32px',
         
 
       },

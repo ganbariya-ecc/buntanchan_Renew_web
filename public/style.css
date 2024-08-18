@@ -872,6 +872,14 @@ video {
   height: max-content;
 }
 
+.h-\[dvh\] {
+  height: dvh;
+}
+
+.h-\[60dvh\] {
+  height: 60dvh;
+}
+
 .min-h-56 {
   min-height: 14rem;
 }

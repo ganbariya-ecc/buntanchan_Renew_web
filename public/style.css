@@ -670,6 +670,14 @@ video {
   margin-left: 3.5rem;
 }
 
+.ml-16 {
+  margin-left: 4rem;
+}
+
+.ml-20 {
+  margin-left: 5rem;
+}
+
 .ml-4 {
   margin-left: 1rem;
 }
@@ -752,14 +760,6 @@ video {
 
 .mt-9 {
   margin-top: 2.25rem;
-}
-
-.ml-16 {
-  margin-left: 4rem;
-}
-
-.ml-20 {
-  margin-left: 5rem;
 }
 
 .box-border {

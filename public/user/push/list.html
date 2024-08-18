@@ -6,7 +6,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../../../style.css">
+        <link rel="stylesheet" href="../../style.css">
     </head>
 
     <body class="bg-main-color font-coment">
@@ -24,14 +24,27 @@
         <main class="flex-col items-end mt-40">
             <!--　見出し　-->
             <div class="flex justify-between mt-6">
-                <h1 class="text-title mt-6 ml-14 text-green font-comment">ご褒美リスト</h1>
+                <h1 class="text-sub mt-6 ml-14 text-green font-comment">⚪︎月⚪︎日の予定</h1>
             </div>
             <!-- タスクの表示-->
             <div id="display-container"
-                class="h-[50dvh] bg-sub-color mt-4 mb-4 w-4/5  pt-10 px-12 pb-16 mx-auto rounded-3xl overflow-y-scroll">
+                class="h-[10dvh] bg-sub-color mt-4 mb-4 w-4/5  pt-10 px-12 pb-16 mx-auto rounded-3xl overflow-y-scroll">
                 <!--タスクが追加される-->
                 <div id="task-container"
                     class="bg-sub-color my-5 w-4/5  mx-auto rounded-3xl">
+                </div>
+            </div>
+            <!--　見出し　-->
+            <div class="flex justify-between mt-9">
+                <h1 class="text-sub mt-6 ml-14 text-green font-comment">タスク</h1>
+                <!-- add circle -->
+            </div>
+            <!-- タスクの表示-->
+            <div id="more-display-container"
+                class="h-[40dvh] bg-sub-color mt-4 mb-5 w-4/5  pt-10 px-12 pb-16 mx-auto  rounded-3xl overflow-y-scroll">
+                <!--タスクが追加される-->
+                <div id="more-task-container"
+                    class="bg-sub-color my-5 w-4/5 mx-auto h-auto rounded-3xl">
                 </div>
             </div>
         </main>

@@ -9,24 +9,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../hamburger_menu.css">
     <link rel="stylesheet" href="./style/calendar.css">
+
     <title>user_home</title>
 </head>
 
 <body class="font-main bg-main-color overflow-hidden">
     <!-- グレイレイヤー -->
-    <!-- <div class="overlay">
-    </div> -->
+    <div class="overlay">
+    </div>
 
     <!-- header要素 -->
     <header class="h-12 p-3 flex items-center">
         <!-- ハンバーガーメニューのボタン -->
-        <!-- <button type="button" class="btn js-btn">
+        <button type="button" class="btn js-btn">
             <span class="btn-line"></span>
-        </button> -->
+        </button>
 
         <!-- ハンバーガーメニュー -->
-        <!-- <nav>
+        <nav>
             <ul class="menu text-left lex-1 flex flex-col">
                 <li class="menu-list"><a href="#"
                         class="text-9xl text-main-font-color pt-24 pb-2 px-14 mb-32 block font-yusei-magic">ぶんたん</a>
@@ -45,14 +47,14 @@
                         <i class="material-icons text-main-font-color">logout</i>
                         ログアウト</a></li>
             </ul>
-        </nav> -->
+        </nav>
 
         <!-- TODO: icon size -->
         <!-- iconとalarmの画像配置 -->
         <div class="flex items-center m-2 gap-2 absolute right-1">
             <!-- TODO: 通知アイコン spanタグわからん -->
             <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
-            <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon"/>
+            <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon" />
         </div>
     </header>
 
@@ -75,6 +77,7 @@
         </div>
     </main>
     <script src="./sqript/calendar.js"></script>
+    <script src="../../script/hamburger_menu.js"></script>
 </body>
 
 </html>

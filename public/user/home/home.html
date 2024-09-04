@@ -2,58 +2,65 @@
 <html lang="en">
 
 <head>
+    <!-- メタ情報とフォントのリンク -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Material Iconsフォント -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Google Fontsの事前接続 -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Kiwi Maruフォント -->
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <!-- Yusei Magicフォント -->
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <!-- カスタムスタイルシート -->
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="./style/calendar.css">
     <link rel="stylesheet" href="../../hamburger_menu.css">
-
     <title>user_home</title>
 </head>
 
 <body class="font-main bg-main-color overflow-hidden">
-    <!-- グレイレイヤー -->
+    <!-- グレイレイヤー（背景暗くするため） -->
     <div class="overlay">
     </div>
 
-    <!-- header要素 -->
+    <!-- ヘッダー -->
     <header class="h-12 p-3 flex items-center">
-        <!-- ハンバーガーメニューのボタン -->
+        <!-- ハンバーガーメニューのボタン -->
         <button type="button" class="btn js-btn">
             <span class="btn-line"></span>
         </button>
 
-        <!-- ハンバーガーメニュー -->
+        <!-- ハンバーガーメニューのナビゲーション -->
         <nav>
             <ul class="menu text-left lex-1 flex flex-col">
+                <!-- メニュー項目 -->
                 <li class="menu-list"><a href="#"
                         class="text-9xl text-main-font-color pt-24 pb-2 px-14 mb-32 block font-yusei-magic">ぶんたん</a>
                 </li>
                 <li class="menu-list"><a href="#"
                         class=" text-stone-600 text-5xl py-10 px-24 block hover:text-orange-300">
+                        <!-- ポイントのアイコンとテキスト -->
                         <i class="material-icons text-main-font-color ">new_releases</i>
                         ポイント</a></li>
                 <li class="menu-list"><a href="#"
                         class=" text-stone-600 text-5xl py-10 px-24 block hover:text-orange-300">
+                        <!-- タスク管理のアイコンとテキスト -->
                         <i class="material-icons text-main-font-color">task</i>
                         タスク管理</a></li>
                 <li class="flex-grow"></li>
                 <li class="menu-list"><a href="#"
                         class=" text-stone-600 text-5xl py-10 px-24 block hover:text-orange-300">
+                        <!-- ログアウトのアイコンとテキスト -->
                         <i class="material-icons text-main-font-color">logout</i>
                         ログアウト</a></li>
             </ul>
         </nav>
 
-        <!-- TODO: icon size -->
-        <!-- iconとalarmの画像配置 -->
+        <!-- ヘッダー右側のアイコンと通知 -->
         <div class="flex items-center m-2 gap-2 absolute right-1">
-            <!-- TODO: 通知アイコン spanタグわからん -->
-            <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
+            <span id="noti icons"><i class="material-icons text-green text-2xl">notifications</i></span>
             <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon" />
         </div>
     </header>
@@ -62,20 +69,21 @@
         <!-- 今日の予定表示 -->
         <div>
             <h2 class="text-comment  ml-14 text-green" id="today_counter">〇月〇日</h2>
+            <!-- 今日のタスク -->
             <div class="flex-none border-white bg-sub-color border-4  w-4/5 mx-auto  items-center rounded-2xl p-2">
                 <p class="text-comment m-1 text-green">Tasks today</p>
                 <p class="text-comment ml-4 mt-5" id="today_tasks">タスク残り⚪︎⚪︎個</p>
             </div>
         </div>
-        <!-- カレンダー -->
+        <!-- カレンダー表示 -->
         <div class="cal-center font-title">
             <div class="cal-navi flex justify-between items-center">
                 <div id="calendar" class="text-mini">
                 </div>
             </div>
-
         </div>
     </main>
+    <!-- スクリプトファイル -->
     <script src="./script/calendar.js"></script>
     <script src="../../script/hamburger_menu.js"></script>
 </body>

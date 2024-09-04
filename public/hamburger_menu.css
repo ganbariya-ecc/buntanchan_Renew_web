@@ -23,8 +23,8 @@ button:hover {
     top: 30px;
     left: 30px;
     /* ボタンの大きさ */
-    width: 72px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     /* 最前面に */
     z-index: 10;
     display: flex;
@@ -33,7 +33,7 @@ button:hover {
 }
 
 .btn .material-icons {
-    font-size: 32px;
+    font-size: 24px;
     /* アイコンのサイズを変更 */
 }
 

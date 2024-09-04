@@ -25,6 +25,9 @@ module.exports = {
         'sub': '64px',
         'text': '48px',
         'comment': '32px',
+        'small': '24px',
+        'mini': '20px',
+        'tiny': '16px',
         
 
       },

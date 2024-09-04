@@ -13,7 +13,7 @@
     <title>user_home</title>
 </head>
 
-<body class="font-main bg-main-color overflow-x-hidden">
+<body class="font-main bg-main-color overflow-hidden">
     <!-- グレイレイヤー -->
     <!-- <div class="overlay">
     </div> -->
@@ -52,24 +52,23 @@
         <div class="flex items-center m-2 gap-2 absolute right-1">
             <!-- TODO: 通知アイコン spanタグわからん -->
             <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
-            <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon" />
+            <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon"/>
         </div>
     </header>
 
-    <main class="flex-col items-end mt-20 ">
+    <main class="flex-col items-end mt-10">
         <!-- 今日の予定表示 -->
         <div>
-            <h2 class="text-title  ml-14 text-green" id="today_counter">〇月〇日</h2>
+            <h2 class="text-comment  ml-14 text-green" id="today_counter">〇月〇日</h2>
             <div class="flex-none border-white bg-sub-color border-4  w-4/5 mx-auto  items-center rounded-2xl p-2">
-                <p class="text-sub m-1 text-green">Tasks today</p>
-                <p class="text-sub ml-4 mt-5" id="today_tasks">タスク残り⚪︎⚪︎個</p>
+                <p class="text-comment m-1 text-green">Tasks today</p>
+                <p class="text-comment ml-4 mt-5" id="today_tasks">タスク残り⚪︎⚪︎個</p>
             </div>
         </div>
-        </div>
         <!-- カレンダー -->
-        <div class="cal-center">
+        <div class="cal-center font-title">
             <div class="cal-navi flex justify-between items-center">
-                <div id="calendar" class=" text-sub">
+                <div id="calendar" class="text-mini">
                 </div>
             </div>
 

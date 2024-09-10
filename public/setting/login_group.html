@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>ログイン画面</title>
-    <link rel="stylesheet" href="/statics/app/css/setting_user/login_group.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <!-- Kiwi Maruフォント -->
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <!-- Yusei Magicフォント -->
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
     <style>
         
         .create {
@@ -27,26 +30,22 @@
 <body class="bg-main-color font-coment">
     <!-- title -->
     <header class="h-1/2">
-        <img class="w-full h-auto" src="/statics/images/rogo.png" alt="ロゴ">
+        <img class="w-full h-auto" src="./image/rogo.png" alt="ロゴ">
     </header>
 
     <!-- main -->
-    <main class="flex flex-col justify-center items-center  w-full">
-        <p class="text-6xl text-center">グループを作成しますか？</p>
-        <p class="text-4xl mt-7 text-center">または既にあるグループに参加</p>
+    <main class="flex flex-col justify-center items-center ">
+        <p class="text-sub text-center">グループを作成しますか？</p>
+        <p class="text-comment mt-7 text-center">または既にあるグループに参加</p>
 
         <!-- 選択肢 -->
-        <div class="flex flex-col items-center w-full">
+        <div class="flex flex-col items-center">
             <button onclick="location.href='new_user.html'"
-                class="mt-16 text-5xl font-light w-4/5 py-5 create">グループ作成</button>
-            <p class="text-6xl mt-7 text-center text-gray-400">----------------or----------------</p>
-            <button class="mt-16 text-5xl font-light w-4/5 py-5 join" id="login_button">ログイン</button>
+                class="mt-16 text-text font-light w-4/5 py-5 create">グループ作成</button>
+            <p class="text-sub mt-7 text-center text-gray">----------------or----------------</p>
+            <button class="mt-16 text-text font-light w-4/5 py-5 join" id="login_button">ログイン</button>
         </div>
     </main>
-
-    <script src="/statics/app/appjs/authsdk.js"></script>
-    <script src="./scripts/login_group.js"></script>
-    <link rel="stylesheet" href="/statics/app/css/setall.css">
 </body>
 
 

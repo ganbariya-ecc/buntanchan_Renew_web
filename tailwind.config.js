@@ -17,6 +17,7 @@ module.exports = {
         'green': '#4AB4A1',
         'skyblue': '#BCE6FF',
         'white': '#FFFFFF',
+        'gray': '#9ca3af',
       },
 
       // フォントサイズ設定

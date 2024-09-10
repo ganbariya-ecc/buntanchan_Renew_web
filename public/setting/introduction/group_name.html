@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>グループ作成画面</title>
-    <link rel="stylesheet" href="/statics/app/css/setting_user/group_name.css"><!-- Googleフォントのパフォーマンスを向上させるため、先にフォントの読み込み先に接続することをブラウザに指示 -->
+
+    <!-- Googleフォントのパフォーマンスを向上させるため、先にフォントの読み込み先に接続することをブラウザに指示 -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Material Iconsフォント -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Googleフォントの読み込み -->
     <!-- Google Fonts - Kiwi Maru -->
@@ -15,102 +19,36 @@
 
     <!-- style.cssファイルでレイアウトや色などのデザインを指定 -->
     <link rel="stylesheet" href="../../style.css">
-
-    <style>
-        
-
-        /* グループ名作成時のアニメーション */
-
-        .cp_input_text {
-            position: relative;
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        .cp_input_text input[type='text'] {
-            font: 40px/24px sans-serif;
-            box-sizing: border-box;
-            width: 100%;
-            letter-spacing: 1px;
-            padding-left: 4em;
-        }
-
-        .cp_input_text input[type='text']:focus {
-            outline: none;
-        }
-
-        .ef {
-            padding: 4px 0;
-            border: 0;
-            margin-top: 10px;
-            border-bottom: 1px solid #E07448;
-            background-color: transparent;
-        }
-
-        .ef~.focus_line {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            transition: 0.4s;
-            background-color: #E07448;
-        }
-
-        .ef:focus~.focus_line,
-        .cp_input_text.ef~.focus_line {
-            width: 100%;
-            transition: 0.4s;
-        }
-
-        .ef~label {
-            position: absolute;
-            z-index: -1;
-            top: 4px;
-            left: 0;
-            width: 100%;
-            transition: 0.3s;
-            letter-spacing: 0.5px;
-            color: #E07448;
-        }
-
-        .ef:focus~label,
-        .cp_input_text.ef~label {
-            font-size: 12px;
-            top: -16px;
-            transition: 0.3s;
-            color: #E07448;
-            font-size: x-large;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/group_animation.css">
 </head>
 
-<body class="bg-main-color font-coment">
+<body class="bg-main-color font-coment h-screen ">
 
     <!-- main -->
     <main class="h-full w-full">
-        <a href="/statics/app/html/setting_user/new_user.html"><img class="ml-10 mt-7 w-9 h-12"
-                src="../image/back.png" alt="戻る"></a>
+        <a class="absolute top-5 left-5 " href="../createUser/new_user.html"><img class="w-16 h-24"
+            src="../image/back.png" alt="戻る"></a>
         <!-- グループ名の作成 -->
-        <p class="text-6xl mt-48 mb-24 text-center text-orange-500">グループ名を入力してください</p>
+        <p class="text-6xl mt-48 mb-24 text-center text-green">グループ名を入力してください</p>
         <!-- 入力 -->
         <div class="cp_input_text">
-            <input class="ef text-4xl" type="text" placeholder="" id="group_name_input">
-            <label class="text-4xl">グループ名</label>
+            <input class="ef text-text" type="text" placeholder="" id="group_name_input">
+            <label for="group_name_input" class="text-4xl">グループ名</label>
             <span class="focus_line"></span>
         </div>
 
         <!-- メンバー -->
-        <p class="text-6xl mt-10 mb-24 text-center text-orange-500">グループメンバーを追加してください</p>
-        <div class="grid mr-auto ml-auto mt-11 bg-amber-100 w-4/5 h-1/2" id="group_members" style="overflow-y: scroll;">
-            <button id="add_member_button" class="mr-auto ml-auto mt-4"><img src="./images/add.png"
-                    alt="追加ボタン"></button>
+        <button id="add_member_button" class="absolute right-20 mt-8">
+            <i class="material-icons text-green text-main">person_add</i>
+        </button>
+        <p class="text-sub my-24 text-center text-green">メンバーを追加</p>
+        <div class="grid mx-auto mt-11 bg-sub-color w-4/5 h-1/2" id="group_members" style="overflow-y: scroll;">
+            <!-- メンバー追加のための要素がここに追加される -->
         </div>
-        <button class="block mr-auto ml-auto mt-24 text-6xl bg-orange-300 font-light px-12 py-6 rounded-2xl"
+        <button class="block mr-auto ml-auto mt-24 text-6xl bg-sub-color font-light px-12 py-6 rounded-2xl"
             id="create_button">作成</button>
     </main>
     <script src="./scripts/group_name.js"></script>
 </body>
-
 
 </html>

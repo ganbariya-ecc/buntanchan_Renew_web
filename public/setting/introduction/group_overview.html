@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>グループ情報</title>
+    <link rel="stylesheet" href="/statics/app/css/user/hamburger_menu.css">
+    <link rel="stylesheet" href="/statics/app/css/setting_user/group_overview.css">
+    <link rel="stylesheet" href="/statics/app/css/setting_user/group.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body class="box-border font-coment bg-main-color">
+    <!-- グレイレイヤー -->
+    <div class="overlay">
+    </div>
+
+    <!-- header要素 -->
+    <header class="h-40  flex items-center">
+        <!-- ハンバーガーメニュー -->
+        <button type="button" class="btn js-btn">
+            <span class="btn-line"></span>
+        </button>
+
+        <!-- メニューオーバーレイ -->
+        <nav>
+            <ul class="menu text-left">
+                <li class="menu-list"><a href="#"
+                        class="text-9xl text-teal-500 pt-24 pb-2 px-14 mb-32 block font-title">ぶんたん</a></li>
+                <li class="menu-list"><a href="/statics/app/html/admin/home.html"
+                        class=" text-stone-600 text-5xl py-10 px-24 block hover:text-orange-300">
+                        <i class="material-icons text-main-font-color ">home</i>
+                        ホーム</a></li>
+
+                <li class="menu-list"><a href="/statics/app/html/user/point_mgmt.html"
+                        class=" text-stone-600 text-5xl py-10 px-24 block hover:text-orange-300">
+                        <i class="material-icons text-main-font-color ">new_releases</i>
+                        ポイント</a></li>
+                <li class="menu-list"><a href="/statics/app/html/admin/admin_task_list.html"
+                        class=" text-stone-600 text-5xl py-10 px-24 block hover:text-orange-300">
+                        <i class="material-icons text-main-font-color ">task</i>
+                        タスク管理</a></li>
+
+
+                <li class="menu-list"><a href="/statics/app/html/auth/logout.html"
+                        class=" text-stone-600 text-5xl py-10 px-24 block hover:text-orange-300">
+                        <i class="material-icons text-main-font-color ">logout</i>
+                        ログアウト</a></li>
+            </ul>
+        </nav>
+
+        <!-- iconとalarmの画像配置 -->
+        <div class="flex justify-center absolute right-3">
+
+            <span id="noti icons"><i class="material-icons text-teal-500  py-0 px-2">notifications</i></span>
+            <img class="w-24 h-24 bg-white rounded-full" src="/statics/images/icon.png" alt="icon" id="UserIcon" />
+        </div>
+    </header>
+    <main class="flex flex-col justify-center items-center">
+        <!-- グループ情報 -->
+        <div id="user_view_container" class="groupsContainer bg-orange-50 w-5/6 h-auto mx-auto mt-10 mb-12 border-4 rounded-3xl"></div>
+        </div>
+        <p class="text-6xl mt-12 mb-8 text-main-font-color text-center">グループに参加</p>
+        <div>
+            <button class=" mt-12t text-4xl bg-sub-color border-2 border-white font-light px-12 py-6 rounded-xl" id="link_copy_btn">招待リンクのコピー</button>
+        </div>
+        <!-- <p class="text-5xl mt-12 top-1/2 text-center">------------または------------</p>
+        <div>
+            <button class="mt-12 text-4xl bg-sub-color border-2 border-white font-light px-12 py-6 rounded-xl">QRコードの表示</button>
+        </div> -->
+    </main>
+    <dialog id="login_dialog" class="w-10/12">
+        <div id="login_dialog_container">
+            <img id="user_icon" src="" class="w-36 h-36 rounded-full mx-auto mt-8"/>
+            <p class="text-center text-4xl mt-10 text-main-font-color">パスワード</p>
+            <form class="flex flex-col items-center" id="login_form">
+                <input type="password" id="input_password" class="rounded-3xl w-10/12 h-20 items-center text-center text-7xl"/>
+                <button class="login_btn mt-8">ログイン</button>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="/statics/app/appjs/loader.js"></script>
+    <script src="/statics/app/appjs/authsdk.js"></script>
+    <script src="/statics/app/appjs/appsdk.js"></script>
+    <script src="/statics/app/appjs/member.js"></script>
+    <script src="/statics/app/appjs/Tasks.js"></script>
+    <script src="/statics/app/appjs/CheckAdmin.js"></script>
+    <script src="./scripts/group_overview.js"></script>
+    <script src="./scripts/group.js"></script>
+    <script src="/statics/app/js/hamburger_menu.js"></script>
+</body>
+
+</html>

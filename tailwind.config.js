@@ -22,6 +22,8 @@ module.exports = {
 
       // フォントサイズ設定
       fontSize: {
+        'super': '120px',
+        'main': '96px',
         'title': '80px',
         'sub': '64px',
         'text': '48px',

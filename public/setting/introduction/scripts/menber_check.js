@@ -131,7 +131,7 @@ const submit_button = document.getElementById("submit_button");
 submit_button.addEventListener("click",SubmitGroup);
 
 function BackPage() {
-    window.location.href = "../group_name.html"
+    window.location.href = "../login_group.html"
 }
 
 async function main() {

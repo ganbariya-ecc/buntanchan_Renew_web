@@ -1,0 +1,60 @@
+#calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vmin;
+    /* ビューポートの最小寸法の80% */
+    height: 100vmin;
+    /* ビューポートの最小寸法の80% */
+}
+
+table {
+    width: 80%;
+    height: 100%;
+    border-collapse: separate;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    width: calc(100% / 7);
+    /* 各セルの幅を均等に設定 */
+    height: calc(100% / 7);
+    /* 各セルの高さを均等に設定 */
+    box-sizing: border-box;
+    font-size: 1em;
+    color: #333;
+}
+
+td {
+    background-color: #fff;
+    border: 5px solid rgb(255 247 237);
+}
+
+.current-day {
+    background-color: #FFD3C4;
+}
+
+.task_expired_day {
+    background-color: #a3aeef;
+}
+
+.task_request_expired_day {
+    background-color: #2ff30d;
+}
+
+.task_expired_other {
+    background-color: #5be68c;
+}
+
+.cal-center { 
+    border-radius: 15px;
+    border: 5px solid #fff;
+    background-color: rgb(255 247 237);
+    margin: 20% 5px;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>設定</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body class="bg-main-color font-coment">
+    <!-- header要素 -->
+    <header class="h-12 p-3 flex items-center">
+        <!-- iconとalarmの画像配置 -->
+        <div class="flex items-center m-2 gap-2 absolute right-1">
+            <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
+            <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon"/>
+        </div>
+    </header>
+    <!-- main要素 -->
+    <main class=" mt-40">
+        <!--　見出し　-->
+        <div class="flex flex-col mt-6">
+            <h1 class="text-title mt-6 ml-14 text-green font-comment">設定</h1>
+            <button class="text-comment mt-6 ml-14  text-green font-comment">パスワードの変更</button>
+        </div>
+        
+        <!--　見出し　-->
+        <label class="toggle-button-2 inline-block relative w-[100px] h-[50px] rounded-full border-3 border-gray-300 cursor-pointer transition-colors duration-400">
+            <input type="checkbox" class="hidden" />
+            <span class="block absolute top-1/2 left-[5px] transform -translate-y-1/2 w-[45px] h-[45px] rounded-full bg-gray-300 transition-all duration-400"></span>
+        </label>
+        
+        
+    </main>
+</body>
+
+</html>

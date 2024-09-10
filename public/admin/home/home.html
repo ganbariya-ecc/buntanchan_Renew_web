@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- メタ情報とフォントのリンク -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Material Iconsフォント -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Google Fontsの事前接続 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Kiwi Maruフォント -->
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <!-- Yusei Magicフォント -->
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <!-- カスタムスタイルシート -->
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="./style/calendar.css">
+    <link rel="stylesheet" href="../../hamburger_menu.css">
+    <title>user_home</title>
+</head>
+
+<body class="font-main bg-main-color overflow-hidden">
+    <!-- グレイレイヤー（背景暗くするため） -->
+    <div class="overlay">
+    </div>
+
+    <!-- ヘッダー -->
+    <header class="h-12 p-3 flex items-center">
+        <!-- ハンバーガーメニューのボタン -->
+        <button type="button" class="btn js-btn">
+            <span class="btn-line"></span>
+        </button>
+
+        <!-- ハンバーガーメニューのナビゲーション -->
+        <nav>
+            <ul class="menu text-left lex-1 flex flex-col">
+                <!-- メニュー項目 -->
+                <li class="menu-list"><a href="#"
+                        class="text-text text-green py-4 px-8 mt-12 block font-title">ぶんたん<br>　ちゃん</a>
+                </li>
+                <li class="menu-list"><a href="#"
+                        class=" text-green text-comment py-4 px-6 block hover:text-orange-300">
+                        <!-- ポイントのアイコンとテキスト -->
+                        <i class="material-icons text-green ">new_releases</i>
+                        ポイント</a></li>
+                <li class="menu-list"><a href="#"
+                        class=" text-green text-comment py-4 px-6 block hover:text-orange-300">
+                        <!-- タスク管理のアイコンとテキスト -->
+                        <i class="material-icons text-green">task</i>
+                        タスク管理</a></li>
+                <li class="flex-grow"></li>
+                <li class="menu-list"><a href="#"
+                        class=" text-green text-comment py-4 px-6 block hover:text-orange-300">
+                        <!-- ログアウトのアイコンとテキスト -->
+                        <i class="material-icons text-main-font-color">logout</i>
+                        ログアウト</a></li>
+            </ul>
+        </nav>
+
+        <!-- ヘッダー右側のアイコンと通知 -->
+        <div class="flex items-center mt-8 mr-3 gap-2 absolute right-1">
+            <span id="noti icons"><i class="material-icons text-green text-2xl">notifications</i></span>
+            <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon" />
+        </div>
+    </header>
+
+    <main class="flex-col items-end mt-10">
+        <!-- 今日の予定表示 -->
+        <div>
+            <h2 class="text-comment  ml-14 text-green" id="today_counter">〇月〇日</h2>
+            <!-- 今日のタスク -->
+            <div class="flex-none border-white bg-sub-color border-4  w-4/5 mx-auto items-center rounded-2xl p-2">
+                <p class="text-comment m-1 text-green">Tasks today</p>
+                <p class="text-comment ml-4 mt-5" id="today_tasks">タスク残り⚪︎⚪︎個</p>
+            </div>
+        </div>
+        <!-- カレンダー表示 -->
+        <div class="cal-center font-title">
+            <div class="cal-navi flex justify-between items-center">
+                <div id="calendar" class="text-mini">
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- スクリプトファイル -->
+    <script src="./script/calendar.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../../script/hamburger_menu.js"></script>
+    
+
+</body>
+
+</html>

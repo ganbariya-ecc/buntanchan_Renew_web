@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>ご褒美報告リスト</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../../../style.css">
+    </head>
+
+    <body class="bg-main-color font-coment">
+        
+       <!-- header要素 -->
+    <header class="h-12 p-3 flex items-center">
+        <!-- iconとalarmの画像配置 -->
+        <div class="flex items-center m-2 gap-2 absolute right-1">
+            <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
+            <img class="w-12 h-auto bg-white rounded-full" src="../../images/icon.png" alt="icon" id="UserIcon" />
+        </div>
+    </header>
+        <!-- main要素 -->
+        <main class="flex-col items-end mt-40">
+            <!--　見出し　-->
+            <div class="flex flex-col justify-between mt-6">
+                <h1 class="text-sub mt-6 ml-14 text-green font-comment">引き換え済み一覧</h1>
+                <h2 class="text-comment mt-3 ml-20 text-green font-comment">親に見せにいきましょう！</h2>
+            </div>
+            <!-- タスクの表示-->
+            <div id="display-container"
+                class="h-[50dvh] bg-sub-color mt-4 mb-4 w-4/5  pt-10 px-12 pb-16 mx-auto rounded-3xl overflow-y-scroll">
+                <!--タスクが追加される-->
+                <div id="task-container"
+                    class="bg-sub-color my-5 w-4/5  mx-auto rounded-3xl">
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

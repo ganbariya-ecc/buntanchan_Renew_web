@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ポイント管理</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body class="bg-main-color font-coment">
+    <!-- header要素 -->
+    <header class="h-12 p-3 flex items-center">
+
+        <!-- iconとalarmの画像配置 -->
+        <div class="flex items-center m-2 gap-2 absolute right-1">
+            <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
+            <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon" />
+        </div>
+    </header>
+    <main class="flex-col items-end mt-20">
+        <div class="h-64">
+            <!-- タイトル -->
+            <h1 class="text-title ml-14 text-green">ポイント</h1>
+            <!-- ポイント表示　-->
+            <div class="flex items-center justify-center">
+                <p id="points" class="text-sub ml-14" id="today_counter"><span id="points-span"
+                        class="text-title_max">0</span>ポイント</span>pt</p>
+            </div>
+        </div>
+        <!-- ランキング -->
+        <div class="flex flex-col items-center bg-sub-color border-4 border-white mt-32 w-4/5 mx-auto rounded-3xl">
+            <select class="text-sub tracking-widest rounded-lg w-fit text-center text-green bg-orange-50 mt-10">
+                <option value="monthly">ランキング/月間</option>
+                <option value="weekly">ランキング/週間</option>
+            </select>
+            <!-- ランキングコンテナ -->
+            <div id="ranking" class="w-4/5 h-[50dvh] mt-10 mr-auto ml-auto overflow-y-scroll">
+                <!-- ランキングの表示-->
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

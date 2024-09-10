@@ -70,19 +70,10 @@ async function SubmitGroup() {
     //for 回す
     for (let memberid in members) {
         try {
-            //ユーザーの権限
-            let userRole = "member";
-
-            //管理者か確認
-            if (members[memberid]["isAdmin"]) {
-                //ロールを管理者にする
-                userRole = "admin";
-            }
-
             //リストにプッシュする
             members_list.push({
                 "name" : members[memberid]["name"],
-                "role" : userRole
+                "admin" : members[memberid]["isAdmin"]
             })
         } catch (ex) {
             console.log(ex);
@@ -92,21 +83,21 @@ async function SubmitGroup() {
     }
 
     try {
-        //アクセストークン取得
-        const access_token = await GetToken();
-
-        //グループを作成する
-        const req = await fetch("/app/group/create",{
+        // トークン取得
+        const atoken = await GetJwt();
+    
+        const req = await fetch("/group/create",{
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization" : "Bearer " + access_token
+            headers : {
+                "Authorization" : atoken,
+                "Content-Type" : "application/json",
             },
-            body: JSON.stringify({
-                group_name: group_name,
-                members: members_list,
+            body : JSON.stringify({
+                "name" : group_name,
+                "members" : members_list
             })
         })
+    
 
         //Jsonに変換
         const res = await req.json();
@@ -125,7 +116,7 @@ async function SubmitGroup() {
         //表示
         console.log(res);
 
-        window.location.href = "/statics/app/html/admin/home.html"
+        window.location.href = Admin_Home;
     } catch (ex) {
         //エラー表示
         console.error(ex);
@@ -140,5 +131,26 @@ const submit_button = document.getElementById("submit_button");
 submit_button.addEventListener("click",SubmitGroup);
 
 function BackPage() {
-    window.location.href = "/statics/app/html/setting_user/group_name.html"
+    window.location.href = "../group_name.html"
 }
+
+async function main() {
+    try {
+        if (await IsAdmin() || await IsOwner()) {
+            // adminの場合
+            window.location.href = Admin_Home;
+            return;
+        }
+        if (await IsMember()) {
+            // メンバーの場合
+            window.location.href = Member_Home;
+        }
+        
+    } catch (ex) {
+        console.error(ex);
+        // window.location.href = "/statics/setting/login_group.html";
+        return;
+    }
+}
+
+main();

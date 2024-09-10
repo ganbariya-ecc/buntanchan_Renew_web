@@ -4,12 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>グループ作成画面</title>
-    <link rel="stylesheet" href="/statics/app/css/setting_user/group_name.css">
+    <link rel="stylesheet" href="/statics/app/css/setting_user/group_name.css"><!-- Googleフォントのパフォーマンスを向上させるため、先にフォントの読み込み先に接続することをブラウザに指示 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Googleフォントの読み込み -->
+    <!-- Google Fonts - Kiwi Maru -->
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Yusei Magic -->
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+
+    <!-- style.cssファイルでレイアウトや色などのデザインを指定 -->
+    <link rel="stylesheet" href="../../style.css">
+
     <style>
-        body {
-            height: 100vh;
-            background-color: rgba(246, 219, 186, 0.5);
-        }
+        
 
         /* グループ名作成時のアニメーション */
 
@@ -77,12 +85,12 @@
     </style>
 </head>
 
-<body>
+<body class="bg-main-color font-coment">
 
     <!-- main -->
     <main class="h-full w-full">
         <a href="/statics/app/html/setting_user/new_user.html"><img class="ml-10 mt-7 w-9 h-12"
-                src="/statics/images/back.png" alt="戻る"></a>
+                src="../image/back.png" alt="戻る"></a>
         <!-- グループ名の作成 -->
         <p class="text-6xl mt-48 mb-24 text-center text-orange-500">グループ名を入力してください</p>
         <!-- 入力 -->
@@ -95,17 +103,13 @@
         <!-- メンバー -->
         <p class="text-6xl mt-10 mb-24 text-center text-orange-500">グループメンバーを追加してください</p>
         <div class="grid mr-auto ml-auto mt-11 bg-amber-100 w-4/5 h-1/2" id="group_members" style="overflow-y: scroll;">
-            <button id="add_member_button" class="mr-auto ml-auto mt-4"><img src="/statics/images/add.png"
+            <button id="add_member_button" class="mr-auto ml-auto mt-4"><img src="./images/add.png"
                     alt="追加ボタン"></button>
         </div>
         <button class="block mr-auto ml-auto mt-24 text-6xl bg-orange-300 font-light px-12 py-6 rounded-2xl"
             id="create_button">作成</button>
     </main>
-
-    <script src="/statics/app/appjs/authsdk.js"></script>
-    <script src="/statics/app/appjs/appsdk.js"></script>
     <script src="./scripts/group_name.js"></script>
-    <link rel="stylesheet" href="/statics/app/css/setall.css">
 </body>
 
 

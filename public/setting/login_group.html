@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <title>ログイン画面</title>
+    <!-- Googleフォントのパフォーマンスを向上させるため、先にフォントの読み込み先に接続することをブラウザに指示 -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Kiwi Maruフォント -->
+
+    <!-- Googleフォントの読み込み -->
+    <!-- Google Fonts - Kiwi Maru -->
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
-    <!-- Yusei Magicフォント -->
+    <!-- Google Fonts - Yusei Magic -->
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+
+    <!-- style.cssファイルでレイアウトや色などのデザインを指定 -->
     <link rel="stylesheet" href="../style.css">
-    <style>
-        
-        .create {
-            background-color: #4AB4A1;
-            border-radius: 30px;
-            box-shadow: rgba(0, 0, 0, 0.647) 0px 5px 10px;
-        }
-
-        .join {
-            background-color: #71CDEE;
-            border-radius: 30px;
-            box-shadow: rgba(0, 0, 0, 0.647) 0px 5px 10px;
-
-        }
-    </style>
 </head>
-
+    <!-- 背景色やフォントを指定 -->
 <body class="bg-main-color font-coment">
-    <!-- title -->
+    
+    <!-- ロゴを表示する -->
     <header class="h-1/2">
+        <!-- 画面幅に応じてサイズが変わるロゴ画像 -->  
         <img class="w-full h-auto" src="./image/rogo.png" alt="ロゴ">
     </header>
 
-    <!-- main -->
-    <main class="flex flex-col justify-center items-center ">
+    <!-- flexboxを使用して、縦方向にコンテンツを中央揃えするメインコンテンツ -->
+    <main class="flex flex-col justify-center items-center font-main">
+
+        <!-- 選択肢のテキスト -->
         <p class="text-sub text-center">グループを作成しますか？</p>
         <p class="text-comment mt-7 text-center">または既にあるグループに参加</p>
 
-        <!-- 選択肢 -->
+        <!-- 選択肢のボタン -->
         <div class="flex flex-col items-center">
+
+            <!-- クリックするとnew_user.htmlに遷移するボタン -->
             <button onclick="location.href='new_user.html'"
-                class="mt-16 text-text font-light w-4/5 py-5 create">グループ作成</button>
-            <p class="text-sub mt-7 text-center text-gray">----------------or----------------</p>
-            <button class="mt-16 text-text font-light w-4/5 py-5 join" id="login_button">ログイン</button>
+                class="mt-16 text-text font-light w-4/5 py-5 bg-green rounded-3xl shadow">グループを作成</button>
+            
+            <!-- 視覚的な区切り線として、または別の選択肢を示すテキスト -->
+            <p class="text-text my-12 text-center text-gray">--------------- または ---------------</p>
+            
+            <!-- 既存のグループに参加するためのボタン -->
+            <button class="text-text font-light w-4/5 py-5 bg-skyblue rounded-3xl shadow">グループに参加</button>
         </div>
     </main>
 </body>
-
-
 </html>

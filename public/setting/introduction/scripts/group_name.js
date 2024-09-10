@@ -1,10 +1,3 @@
-
-// const create_button = document.getElementById("create_button");
-
-// create_button.addEventListener("click",function(evt){
-    
-// })
-
 //メンバー集
 let members = {}
 
@@ -89,40 +82,21 @@ create_button.addEventListener('click', () => {
 })
 
 async function main() {
-    const access_token = await GetToken();
-
-    //グループ取得
-    const groups = await GetGroups(access_token);
-
-    //グループ数を取得する
-    if (groups.length > 0) {
-        //タスク取得
-        const req = await fetch("/app/account/me", {
-            method: "GET",
-            headers: {
-                "Authorization": "Bearer " + access_token,
-            }
-        })
-
-        //失敗したとき
-        if (req.status != 200) {
-            //なにもしない
+    try {
+        if (await IsAdmin() || await IsOwner()) {
+            // adminの場合
+            window.location.href = Admin_Home;
             return;
         }
-
-        //自信のID
-        const res_json = await req.json();
-        const my_role = res_json["role"];
-
-        //成功したとき
-        //owner の場合
-        if (my_role == "owner") {
-            //グループ作成に飛ばす
-            window.location.href = "/statics/app/html/admin/home.html";
-        } else {
-            //それ以外の場合
-            window.location.href = "/statics/app/html/user/home.html";
+        if (await IsMember()) {
+            // メンバーの場合
+            window.location.href = Member_Home;
         }
+
+    } catch (ex) {
+        console.error(ex);
+        // window.location.href = "/statics/setting/login_group.html";
+        return;
     }
 }
 

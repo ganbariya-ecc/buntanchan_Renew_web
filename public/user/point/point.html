@@ -8,15 +8,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../hamburger_menu.css">
 </head>
 
 <body class="bg-main-color font-coment">
-    <!-- header要素 -->
-    <header class="h-12 p-3 flex items-center">
+    <!-- グレイレイヤー（背景暗くするため） -->
+    <div class="overlay">
+    </div>
 
-        <!-- iconとalarmの画像配置 -->
-        <div class="flex items-center m-2 gap-2 absolute right-1">
-            <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
+    <!-- ヘッダー -->
+    <header class="h-12 p-3 flex items-center">
+        <!-- ハンバーガーメニューのボタン -->
+        <button type="button" class="btn js-btn">
+            <span class="btn-line"></span>
+        </button>
+
+        <!-- ハンバーガーメニューのナビゲーション -->
+        <nav>
+            <ul class="menu text-left lex-1 flex flex-col">
+                <!-- メニュー項目 -->
+                <li class="menu-list"><a href="#"
+                        class="text-text text-green py-4 px-8 mt-12 block font-title">ぶんたん<br>　ちゃん</a>
+                </li>
+                <li class="menu-list"><a href="#"
+                        class=" text-green text-comment py-4 px-6 block hover:text-orange-300">
+                        <!-- ポイントのアイコンとテキスト -->
+                        <i class="material-icons text-green ">new_releases</i>
+                        ポイント</a></li>
+                <li class="menu-list"><a href="#"
+                        class=" text-green text-comment py-4 px-6 block hover:text-orange-300">
+                        <!-- タスク管理のアイコンとテキスト -->
+                        <i class="material-icons text-green">task</i>
+                        タスク管理</a></li>
+                <li class="flex-grow"></li>
+                <li class="menu-list"><a href="#"
+                        class=" text-green text-comment py-4 px-6 block hover:text-orange-300">
+                        <!-- ログアウトのアイコンとテキスト -->
+                        <i class="material-icons text-main-font-color">logout</i>
+                        ログアウト</a></li>
+            </ul>
+        </nav>
+
+        <!-- ヘッダー右側のアイコンと通知 -->
+        <div class="flex items-center mt-8 mr-3 gap-2 absolute right-1">
+            <span id="noti icons"><i class="material-icons text-green text-2xl">notifications</i></span>
             <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon" />
         </div>
     </header>
@@ -42,6 +77,11 @@
             </div>
         </div>
     </main>
+    <!-- スクリプトファイル -->
+    <script src="./script/calendar.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../../script/hamburger_menu.js"></script>
 </body>
 
 </html>

@@ -1520,6 +1520,11 @@ video {
   padding-bottom: 1.5rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -1829,6 +1834,11 @@ video {
 .hover\:text-orange-300:hover {
   --tw-text-opacity: 1;
   color: rgb(253 186 116 / var(--tw-text-opacity));
+}
+
+.hover\:text-skyblue:hover {
+  --tw-text-opacity: 1;
+  color: rgb(188 230 255 / var(--tw-text-opacity));
 }
 
 .focus\:outline-none:focus {

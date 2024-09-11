@@ -1,10 +1,35 @@
 // サンプルデータ
-const users = [
-    { id: 1, name: "おかあさん" },
-    { id: 2, name: "おとうさん" },
-    { id: 3, name: "おにいさん" },
-    { id: 4, name: "おねえさん" },
-];
+let users = [];
+
+async function main() {
+    try {
+        if (await IsMember()) {
+            // Memberの場合
+            window.location.href = Member_Home;
+            return;
+        }
+
+        // 現在のグループメンバーを取得
+        const members = await GetCurrentMembers();
+
+        members.forEach((member) => {
+            users.push({
+                id : member["UserID"],
+                name : member["UserName"],
+            })
+        });
+        
+        addUserOptions();
+        showTasks();
+    } catch (ex) {
+        console.error(ex);
+        window.location.href = Login_Group;
+        return;
+    }
+}
+
+main();
+
 
 const tasks = [
     { id: 1, name: "ごみだし", completed: false },
@@ -40,6 +65,3 @@ function showTasks() {
         taskList.appendChild(taskItem);
     });
 }
-
-addUserOptions();
-showTasks();

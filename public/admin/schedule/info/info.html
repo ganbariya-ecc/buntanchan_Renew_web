@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>詳細画面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Material Iconsフォント -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Google Fontsの事前接続 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Kiwi Maruフォント -->
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <!-- Yusei Magicフォント -->
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <!-- カスタムスタイルシート -->
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../hamburger_menu.css">
+</head>
+
+<body class="font-main bg-main-color overflow-hidden">
+
+    <!-- ヘッダー -->
+    <header class="h-28  flex items-center">
+        <!-- ハンバーガーメニューのボタン -->
+        <button type="button" class="btn js-btn">
+            <span class="btn-line"></span>
+        </button>
+
+        <!-- ハンバーガーメニューのナビゲーション -->
+        <nav>
+            <ul class="menu text-left lex-1 flex flex-col">
+                <!-- メニュー項目 -->
+                <li class="menu-list"><a href="#"
+                        class="text-comment text-green py-4 px-8 mt-16 block font-title">ぶんたんちゃん</a>
+                </li>
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- ホームのアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">home</i>
+                        ホーム</a></li>
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- タスク管理のアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">task</i>
+                        タスク管理</a></li>
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- ご褒美のアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">new_releases</i>
+                        ご褒美管理</a></li>
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- グループのアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">group</i>
+                        グループ管理</a></li>
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- ポイントのアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">favorite</i>
+                        ポイント管理</a></li>
+
+                <li class="menu-list"><a href="" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- 予定のアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">settings</i>
+                        設定</a></li>
+                <li class="flex-grow"></li>
+                <li class="menu-list"><a href="#" class=" text-green text-large py-4 px-6 block hover:text-skyblue">
+                        <!-- ログアウトのアイコンとテキスト -->
+                        <i class="material-icons text-main-font-color hover:text-skyblue">logout</i>
+                        ログアウト</a></li>
+            </ul>
+        </nav>
+
+        <!-- ヘッダー右側のアイコンと通知 -->
+        <div class="flex   mr-3 gap-2 absolute right-1">
+            <span id="noti icons"><i class="material-icons text-green text-2xl h-auto">notifications</i></span>
+            <img class="w-12 h-auto bg-white rounded-full" src="../../images/icon.png" alt="icon" id="UserIcon" />
+        </div>
+    </header>
+    <!-- main要素 -->
+    <main class="flex-col items-end mt-1">
+        <!-- タスクタイトル表示 -->
+        <div class="flex justify-center items-end mt-8 pb-4">
+            <h1 class="text-comment font-bold flex justify-center items-end text-green">予定のタイトル</h1>
+        </div>
+
+        <!-- 詳細コンテナ　-->
+        <div class="task-info-container flex flex-col items-center  mx-auto px-8 w-4/5 h-4/6">
+            <!-- 時間の表示 -->
+            <div class="pb-10" id="countdown">
+                <!-- <span class="text-red-500" id="days"></span>
+                <span class="text-red-500" id="hours"></span>
+                <span class="text-red-500" id="minutes"></span>
+                <span class="text-red-500" id="seconds"></span> -->
+                <span class="text-red-500" id="countdown_time"></span>
+            </div>
+
+            <!-- メッセージコンテナ -->
+            <div class="mt-14 h-32 w-full overflow-scroll border-2 border-white bg-sub-color p-2 rounded-3xl">
+                <p class="leading-normal tracking-widest text-tiny" id="task-message">ご褒美に対するメッセージを表示</p>
+            </div>
+        </div>
+        <!-- ボタン　-->
+        <div class="flex gap-5 justify-center mt-10">
+            <button class="bg-green border-b-4 border-white shadow-lg   rounded-xl text-comment text-center p-4"
+                id="back_button">戻る</button>
+        </div>
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../../../script/hamburger_menu.js"></script>
+</body>
+
+</html>

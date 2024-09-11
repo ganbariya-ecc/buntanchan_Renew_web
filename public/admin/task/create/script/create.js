@@ -20,6 +20,7 @@ async function main() {
         });
 
         addUserOptions();
+
         // showTasks();
     } catch (ex) {
         console.error(ex);
@@ -70,7 +71,6 @@ function addUserOptions() {
     });
 }
 
-addUserOptions();
 
 // タスク作成の処理
 const task_create_form = document.getElementById("task_create_form");
@@ -80,9 +80,35 @@ task_create_form.addEventListener("submit", async function (evt) {
     evt.preventDefault();
 
     const tas_name = task_create_form.task_name.value;
-    const task_deadline = task_create_form.task_deadline.value;
+    const task_experience = new Date(task_create_form.experience.value);
     const task_point = task_create_form.task_point.value;
     const member_id = task_create_form.member_id.value;
     const task_image = task_create_form.task_image.files[0];
     const task_description = task_create_form.description.value;
+
+    // JWT 生成
+    const atoken = await GetJwt();
+
+    // アクセス
+    const req = await fetch("/task/create", {
+        method: "POST",
+        headers: {
+            "Authorized": atoken,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "TaskName": tas_name, //タスク名
+            "Explanation": task_description, // タスクの説明
+            "ExpirationDate": task_experience.getTime() / 1000,  // タスクの有効期限
+            "OrderTargetID": member_id, // 依頼先ID
+            "Point": Number(task_point)    //タスクのポイント
+        })
+    });
+
+    if (req.status != 200) {
+        console.log(await req.text());
+        return;
+    }
+
+    console.log(await req.json());
 })

@@ -26,7 +26,7 @@
     </div>
 
     <!-- ヘッダー -->
-    <header class="h-12 p-3 flex items-center">
+    <header class="h-28  flex items-center">
         <!-- ハンバーガーメニューのボタン -->
         <button type="button" class="btn js-btn">
             <span class="btn-line"></span>
@@ -37,30 +37,38 @@
             <ul class="menu text-left lex-1 flex flex-col">
                 <!-- メニュー項目 -->
                 <li class="menu-list"><a href="#"
-                        class="text-text text-green py-4 px-8 mt-12 block font-title">ぶんたん<br>　ちゃん</a>
+                        class="text-comment text-green py-4 px-8 mt-16 block font-title">ぶんたんちゃん</a>
                 </li>
-                <li class="menu-list"><a href="../point/point.html"
-                        class=" text-green text-comment py-4 px-6 block hover:text-orange-300">
-                        <!-- ポイントのアイコンとテキスト -->
-                        <i class="material-icons text-green ">new_releases</i>
-                        ポイント</a></li>
-                <li class="menu-list"><a href="#"
-                        class=" text-green text-comment py-4 px-6 block hover:text-orange-300">
+
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
                         <!-- タスク管理のアイコンとテキスト -->
-                        <i class="material-icons text-green">task</i>
+                        <i class="material-icons text-green hover:text-skyblue">task</i>
                         タスク管理</a></li>
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- ご褒美のアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">new_releases</i>
+                        ご褒美管理</a></li>
+               
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- ポイントのアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">favorite</i>
+                        ポイント管理</a></li>
+               
+                <li class="menu-list"><a href="" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- 設定のアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">settings</i>
+                        設定</a></li>
                 <li class="flex-grow"></li>
-                <li class="menu-list"><a href="#"
-                        class=" text-green text-comment py-4 px-6 block hover:text-orange-300">
+                <li class="menu-list"><a href="#" class=" text-green text-large py-4 px-6 block hover:text-skyblue">
                         <!-- ログアウトのアイコンとテキスト -->
-                        <i class="material-icons text-main-font-color">logout</i>
+                        <i class="material-icons text-main-font-color hover:text-skyblue">logout</i>
                         ログアウト</a></li>
             </ul>
         </nav>
 
         <!-- ヘッダー右側のアイコンと通知 -->
-        <div class="flex items-center mt-8 mr-3 gap-2 absolute right-1">
-            <span id="noti icons"><i class="material-icons text-green text-2xl">notifications</i></span>
+        <div class="flex   mr-3 gap-2 absolute right-1">
+            <span id="noti icons"><i class="material-icons text-green text-2xl h-auto">notifications</i></span>
             <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon" />
         </div>
     </header>
@@ -86,13 +94,9 @@
     <!-- スクリプトファイル -->
     <script src="./script/calendar.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="../../script/hamburger_menu.js"></script>
 
-    <script src="../../config.js"></script>
-    <script src="../../utils/authsdk.js"></script>
-    <script src="../../utils/group/current.js"></script>
-    <script src="./script/home.js"></script>
 
 </body>
 

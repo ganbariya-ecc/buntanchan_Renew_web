@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>管理者タスク作成画面</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../../../style.css">
+    </head>
+    <body class="bg-main-color font-main">
+        <!-- header要素 -->
+        <header class="h-40">
+            <!-- 戻るボタン -->
+            <button class="material-icons h-32 pt-16 pl-6 text-icon-md text-green">arrow_back_ios</button>
+        </header>
+        <!-- main要素 -->
+        <main>
+            <h1 class="text-title text-center text-green">タスクを新規作成</h1>
+            <!-- タスクの新規作成フォーム -->
+            <form class="h-full w-10/12 mx-auto text-center" id="task_create_form">
+                <!-- タスクの名前を入力 -->
+                <h2 class="text-comment text-green">タイトル<span class="text-red-500">*</span></h2>
+                <div class="relative flex items-center">
+                    <span class="material-icons absolute left-4 text-green text-icon-md">border_color</span>
+                    <input type="text" id="task_name" name="task_name" class="w-full h-32 bg-sub-color text-text text-center border-4 border-white rounded-3xl focus:outline-none focus:ring-2 focus:ring-skybule" required/>
+                </div>
+
+                <!-- タスクの締め切りを入力 -->
+                <h2 class="my-[0.5dvh] text-comment text-green">締め切り<span class="text-red-500">*</span></h2>
+                <div class="relative flex items-center">
+                    <span class="material-icons absolute left-4 text-green text-icon-md">alarm_on</span>
+                    <input type="datetime-local" id="task_deadline" name="experience" class="w-full h-32 pr-3 bg-sub-color text-text text-center border-4 border-white rounded-3xl focus:outline-none focus:ring-2 focus:ring-skybule" required/>
+                </div>
+
+                <!-- タスクの承諾締め切りを入力 -->
+                <h2 class="my-[0.5dvh] text-comment text-green">承諾締め切り<span class="text-red-500">*</span></h2>
+                <div class="relative flex items-center">
+                    <span class="material-icons absolute left-4 text-green text-icon-md">alarm_on</span>
+                    <input type="datetime-local" id="consent_deadline" name="request_exp" class="w-full h-32 pr-3 bg-sub-color text-text text-center border-4 border-white rounded-3xl focus:outline-none focus:ring-2 focus:ring-skybule" required/>
+                </div>
+
+                <!-- タスクのポイントを設定 -->
+                <h2 class="my-[0.5dvh] text-comment text-green">ご褒美ポイント<span class="text-red-500">*</span></h2>
+                <div class="relative flex items-center">
+                    <input type="number" id="task_point" name="task_point" class="w-full h-32 bg-sub-color text-text text-center border-4 border-white rounded-xl focus:outline-none focus:ring-2 focus:ring-skybule" value="30" required/>
+                </div>
+
+                <!-- タスクを割り振るユーザーを選択 -->
+                <h2 class="my-[0.5dvh] text-comment text-green">ユーザー<span class="text-red-500">*</span></h2>
+                <select id="user_select" name="member_id" class="w-full h-32 bg-sub-color text-text text-center border-4 border-white rounded-xl focus:outline-none focus:ring-2 focus:ring-skybule">
+
+                </select>
+
+                <!-- タスクのイメージ画像の選択 -->
+                <h2 class="my-[0.5dvh] text-comment text-green">画像</h2>
+                <label for="task_image_upload">
+                    <div id="file_upload" class="w-full h-56 flex mx-auto bg-sub-color border-4 border-white rounded-xl">
+                        <input type="file" id="task_image_upload" name="task_image" class="hidden" onchange="previewImage(event)"/>
+                        <span class="material-icons m-auto text-icon-md text-green">add</span>
+                    </div>
+                </label>
+
+                <!-- タスクに対するメッセージを入力 -->
+                <h2 class="my-[0.5dvh] text-comment text-green">メッセージ</h2>
+                <div class="relative flex">
+                    <span class="material-icons absolute top-8 left-8 text-green text-icon-xl">sticky_note_2</span>
+                    <textarea name="description" id="task_message" class="w-full h-72 pt-8 px-8 bg-sub-color text-comment text-center border-4 border-white rounded-3xl focus:outline-none focus:ring-2 focus:ring-skybule"></textarea>
+                </div>
+
+                <!-- 作成ボタン -->
+                <button id="create_btn" class="w-80 h-32 my-[3dvh] bg-skyblue border-4 border-white shadow-lg rounded-3xl text-text">作成</button>
+            </form>
+        </main>
+        <script src="./script/create.js"></script>
+    </body>
+</html>

@@ -31,6 +31,7 @@ module.exports = {
         'text': '48px',
         'countdown': '40px',
         'comment': '32px',
+        'large': '28px',
         'small': '24px',
         'mini': '20px',
         'tiny': '16px',

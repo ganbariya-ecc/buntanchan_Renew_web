@@ -34,11 +34,11 @@
                 </div>
 
                 <!-- タスクの承諾締め切りを入力 -->
-                <h2 class="my-[0.5dvh] text-comment text-green">承諾締め切り<span class="text-red-500">*</span></h2>
+                <!-- <h2 class="my-[0.5dvh] text-comment text-green">承諾締め切り<span class="text-red-500">*</span></h2>
                 <div class="relative flex items-center">
                     <span class="material-icons absolute left-4 text-green text-icon-md">alarm_on</span>
                     <input type="datetime-local" id="consent_deadline" name="request_exp" class="w-full h-32 pr-3 bg-sub-color text-text text-center border-4 border-white rounded-3xl focus:outline-none focus:ring-2 focus:ring-skybule" required/>
-                </div>
+                </div> -->
 
                 <!-- タスクのポイントを設定 -->
                 <h2 class="my-[0.5dvh] text-comment text-green">ご褒美ポイント<span class="text-red-500">*</span></h2>
@@ -72,6 +72,11 @@
                 <button id="create_btn" class="w-80 h-32 my-[3dvh] bg-skyblue border-4 border-white shadow-lg rounded-3xl text-text">作成</button>
             </form>
         </main>
+
+        <script src="/statics/config.js"></script>
+        <script src="/statics/utils/authsdk.js"></script>
+        <script src="/statics/utils/group/current.js"></script>
+        <script src="../task.js"></script>
         <script src="./script/create.js"></script>
     </body>
 </html>

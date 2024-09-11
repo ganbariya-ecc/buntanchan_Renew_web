@@ -14,11 +14,11 @@ async function main() {
 
         members.forEach((member) => {
             users.push({
-                id : member["UserID"],
-                name : member["UserName"],
+                id: member["UserID"],
+                name: member["UserName"],
             })
         });
-        
+
         addUserOptions();
         showTasks();
     } catch (ex) {
@@ -30,6 +30,11 @@ async function main() {
 
 main();
 
+// ボタンにイベントつける
+const task_create_btn = document.getElementById("task_create_btn");
+task_create_btn.addEventListener("click", function (evt) {
+    window.location.href = "../create/create.html"
+})
 
 const tasks = [
     { id: 1, name: "ごみだし", completed: false },

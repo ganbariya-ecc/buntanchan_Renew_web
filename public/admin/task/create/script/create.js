@@ -1,11 +1,43 @@
+// サンプルデータ
+let users = [];
+
+async function main() {
+    try {
+        if (await IsMember()) {
+            // Memberの場合
+            window.location.href = Member_Home;
+            return;
+        }
+
+        // 現在のグループメンバーを取得
+        const members = await GetCurrentMembers();
+
+        members.forEach((member) => {
+            users.push({
+                id: member["UserID"],
+                name: member["UserName"],
+            })
+        });
+
+        addUserOptions();
+        // showTasks();
+    } catch (ex) {
+        console.error(ex);
+        window.location.href = Login_Group;
+        return;
+    }
+}
+
+main();
+
 // 画像プレビューとアップロード
 function previewImage(event) {
     const file = event.target.files[0];
     const fileUpload = document.getElementById('file_upload');
-    
+
     if (file) {
         const reader = new FileReader();
-        reader.onload = function(e) {
+        reader.onload = function (e) {
             // プレビュー画像を削除
             const existingImg = fileUpload.querySelector('img');
             if (existingImg) {
@@ -26,14 +58,6 @@ function previewImage(event) {
     }
 }
 
-//ユーザーのサンプルデータ
-const users = [
-    { id: 1, name: "お兄さん" },
-    { id: 2, name: "お姉さん" },
-    { id: 3, name: "いもうと" },
-    { id: 4, name: "おとうと" },
-];
-
 // ユーザーをオプションに追加する関数
 function addUserOptions() {
     const userSelect = document.getElementById('user_select');
@@ -47,3 +71,18 @@ function addUserOptions() {
 }
 
 addUserOptions();
+
+// タスク作成の処理
+const task_create_form = document.getElementById("task_create_form");
+
+task_create_form.addEventListener("submit", async function (evt) {
+    // submit イベントをキャンセル
+    evt.preventDefault();
+
+    const tas_name = task_create_form.task_name.value;
+    const task_deadline = task_create_form.task_deadline.value;
+    const task_point = task_create_form.task_point.value;
+    const member_id = task_create_form.member_id.value;
+    const task_image = task_create_form.task_image.files[0];
+    const task_description = task_create_form.description.value;
+})

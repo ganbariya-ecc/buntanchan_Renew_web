@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ご褒美リスト</title>
+    <title>詳細画面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Material Iconsフォント -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -39,15 +39,19 @@
                         <i class="material-icons text-green hover:text-skyblue">home</i>
                         ホーム</a></li>
                 <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- タスク管理のアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">task</i>
+                        タスク管理</a></li>
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- ご褒美のアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">new_releases</i>
+                        ご褒美管理</a></li>
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
                         <!-- ポイントのアイコンとテキスト -->
                         <i class="material-icons text-green hover:text-skyblue">favorite</i>
-                        ポイント</a></li>
-                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
-                        <!-- 予定のアイコンとテキスト -->
-                        <i class="material-icons text-green hover:text-skyblue">menu_book</i>
-                        予定</a></li>
+                        ポイント管理</a></li>
                 <li class="menu-list"><a href="" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
-                        <!-- 予定のアイコンとテキスト -->
+                        <!-- 設定のアイコンとテキスト -->
                         <i class="material-icons text-green hover:text-skyblue">settings</i>
                         設定</a></li>
                 <li class="flex-grow"></li>
@@ -66,17 +70,33 @@
     </header>
     <!-- main要素 -->
     <main class="flex-col items-end mt-1">
-        <!--　見出し　-->
-        <div class="flex justify-between mt-6">
-            <h1 class="text-comment mt-6 ml-14 text-green font-comment">ご褒美リスト</h1>
+        <!-- タスクタイトル表示 -->
+        <div class="flex justify-center items-end mt-8 pb-4">
+            <h1 class="text-comment font-bold flex justify-center items-end text-green">予定のタイトル</h1>
         </div>
-        <!-- ご褒美の表示-->
-        <div id="display-container"
-            class="h-[50dvh] bg-sub-color mt-4 mb-4 w-4/5  pt-10 px-12 pb-16 mx-auto rounded-3xl overflow-y-scroll">
-            <!--ご褒美が追加される-->
-            <div id="task-container" class="bg-sub-color my-5 w-4/5  mx-auto rounded-3xl">
+
+        <!-- 詳細コンテナ　-->
+        <div class="task-info-container flex flex-col items-center  mx-auto px-8 w-4/5 h-4/6">
+            <!-- 時間の表示 -->
+            <div class="pb-10" id="countdown">
+                <!-- <span class="text-red-500" id="days"></span>
+                <span class="text-red-500" id="hours"></span>
+                <span class="text-red-500" id="minutes"></span>
+                <span class="text-red-500" id="seconds"></span> -->
+                <span class="text-red-500" id="countdown_time"></span>
+            </div>
+
+            <!-- メッセージコンテナ -->
+            <div class="mt-14 h-32 w-full overflow-scroll border-2 border-white bg-sub-color p-2 rounded-3xl">
+                <p class="leading-normal tracking-widest text-tiny" id="task-message">ご褒美に対するメッセージを表示</p>
             </div>
         </div>
+        <!-- ボタン　-->
+        <div class="flex gap-5 justify-center mt-10">
+            <button class="bg-green border-b-4 border-white shadow-lg   rounded-xl text-comment text-center p-4"
+                id="back_button">戻る</button>
+        </div>
+
     </main>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

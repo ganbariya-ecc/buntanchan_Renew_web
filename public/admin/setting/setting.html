@@ -4,37 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <title>設定</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Material Iconsフォント -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Google Fontsの事前接続 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Kiwi Maruフォント -->
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <!-- Yusei Magicフォント -->
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <!-- カスタムスタイルシート -->
     <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../hamburger_menu.css">
 </head>
 
-<body class="bg-main-color font-coment">
-    <!-- header要素 -->
-    <header class="h-12 p-3 flex items-center">
-        <!-- iconとalarmの画像配置 -->
-        <div class="flex items-center m-2 gap-2 absolute right-1">
-            <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
-            <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon"/>
+<body class="font-main bg-main-color overflow-hidden">
+    <!-- グレイレイヤー（背景暗くするため） -->
+    <div class="overlay">
+    </div>
+
+    <!-- ヘッダー -->
+    <header class="h-28  flex items-center">
+        <!-- ハンバーガーメニューのボタン -->
+        <button type="button" class="btn js-btn">
+            <span class="btn-line"></span>
+        </button>
+
+        <!-- ハンバーガーメニューのナビゲーション -->
+        <nav>
+            <ul class="menu text-left lex-1 flex flex-col">
+                <!-- メニュー項目 -->
+                <li class="menu-list"><a href="#"
+                        class="text-comment text-green py-4 px-8 mt-16 block font-title">ぶんたんちゃん</a>
+                </li>
+
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- タスク管理のアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">task</i>
+                        タスク管理</a></li>
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- ご褒美のアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">new_releases</i>
+                        ご褒美管理</a></li>
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- グループのアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">group</i>
+                        グループ管理</a></li>
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- ポイントのアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">favorite</i>
+                        ポイント管理</a></li>
+                <li class="menu-list"><a href="" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- 予定のアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">menu_book</i>
+                        予定管理</a></li>
+                <li class="flex-grow"></li>
+                <li class="menu-list"><a href="#" class=" text-green text-large py-4 px-6 block hover:text-skyblue">
+                        <!-- ログアウトのアイコンとテキスト -->
+                        <i class="material-icons text-main-font-color hover:text-skyblue">logout</i>
+                        ログアウト</a></li>
+            </ul>
+        </nav>
+
+        <!-- ヘッダー右側のアイコンと通知 -->
+        <div class="flex   mr-3 gap-2 absolute right-1">
+            <span id="noti icons"><i class="material-icons text-green text-2xl h-auto">notifications</i></span>
+            <img class="w-12 h-auto bg-white rounded-full" src="../images/icon.png" alt="icon" id="UserIcon" />
         </div>
     </header>
-    <!-- main要素 -->
-    <main class=" mt-40">
+
+    <main class="flex-col items-end mt-10">
         <!--　見出し　-->
         <div class="flex flex-col mt-6">
-            <h1 class="text-title mt-6 ml-14 text-green font-comment">設定</h1>
-            <button class="text-comment mt-6 ml-14  text-green font-comment">パスワードの変更</button>
+            <h1 class="text-comment mt-6 ml-14 text-green">設定</h1>
+            <div class="flex justify-center p-auto mt-4">
+                <button class="text-green m-4  text-large bg-sub-color border-2 border-white font-light  p-4 rounded-xl"
+                    id="link_copy_btn">パスワードを変更する</button>
+
+            </div>
+            <div class="flex justify-center p-auto mt-4">
+                <button class="text-green m-4  text-large bg-sub-color border-2 border-white font-light  p-4 rounded-xl"
+                    id="link_copy_btn">ログアウト</button>
+            </div>
         </div>
-        
+
         <!--　見出し　-->
-        <label class="toggle-button-2 inline-block relative w-[100px] h-[50px] rounded-full border-3 border-gray-300 cursor-pointer transition-colors duration-400">
+        <label
+            class="toggle-button-2 inline-block relative w-[100px] h-[50px] rounded-full border-3 border-gray-300 cursor-pointer transition-colors duration-400">
             <input type="checkbox" class="hidden" />
-            <span class="block absolute top-1/2 left-[5px] transform -translate-y-1/2 w-[45px] h-[45px] rounded-full bg-gray-300 transition-all duration-400"></span>
+            <span
+                class="block absolute top-1/2 left-[5px] transform -translate-y-1/2 w-[45px] h-[45px] rounded-full bg-gray-300 transition-all duration-400"></span>
         </label>
-        
-        
+
+
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../../script/hamburger_menu.js"></script>
 </body>
 
 </html>

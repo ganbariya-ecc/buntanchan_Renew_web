@@ -18,7 +18,10 @@ module.exports = {
         'skyblue': '#BCE6FF',
         'white': '#FFFFFF',
         'completed': '#71CDEE',
-        'incomplete': '#FFEDDD'
+        'incomplete': '#FFEDDD',
+        'gray': '#9ca3af',
+        'completed': '#71CDEE',
+        'incomplete': '#FFEDDD',
       },
 
       // フォントサイズ設定
@@ -30,6 +33,7 @@ module.exports = {
         'text': '48px',
         'countdown': '40px',
         'comment': '32px',
+        'large': '28px',
         'small': '24px',
         'mini': '20px',
         'tiny': '16px',

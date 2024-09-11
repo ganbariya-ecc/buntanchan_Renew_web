@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ご褒美リスト</title>
+    <title>ご褒美承認画面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Material Iconsフォント -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -71,22 +71,35 @@
     </header>
     <!-- main要素 -->
     <main class="flex-col items-end mt-1">
-        <!--　見出し　-->
-        <div class="flex justify-between mt-6">
-            <h1 class="text-comment mt-6 ml-14 text-green font-comment">ご褒美リスト</h1>
+        <!-- タスクタイトル表示 -->
+        <div class="flex justify-center items-end mt-8 pb-4">
+            <h1 class="text-comment font-bold flex justify-center items-end text-green">ご褒美のタイトル</h1>
         </div>
-        <!-- ご褒美の表示-->
-        <div id="display-container"
-            class="h-[50dvh] bg-sub-color mt-4 mb-4 w-4/5  pt-10 px-12 pb-16 mx-auto rounded-3xl overflow-y-scroll">
-            <!--ご褒美が追加される-->
-            <div id="task-container" class="bg-sub-color my-5 w-4/5  mx-auto rounded-3xl">
+        <!-- 現在のステータスを表示 -->
+        <div class="flex border-white bg-sub-color border-4 mx-auto w-4/6 h-auto items-center rounded-2xl my-3">
+            <span class="material-icons text-green ml-8" style="font-size: 40px;">notifications</span>
+            <span class="ml-6 text-large" id="status-message">ステータス</span>
+        </div>
+        <!-- 詳細コンテナ　-->
+        <div class="task-info-container flex flex-col items-center  mx-auto px-8 w-4/5 h-4/6">
+
+            <!-- イメージ画像　-->
+            <div class="rounded-xl overflow-hidden h-3/6 mt-2">
+                <img src="./image/404.jpg" alt="Task Image" class="w-full h-full" id="task-image" />
+            </div>
+            <!-- メッセージコンテナ -->
+            <div class="mt-14 h-32 w-full overflow-scroll border-2 border-white bg-sub-color p-2 rounded-3xl">
+                <p class="leading-normal tracking-widest text-tiny" id="task-message">ご褒美に対するメッセージを表示</p>
             </div>
         </div>
-        <!-- ご褒美報告リストに飛ばしたい -->
-        <div class="flex justify-center p-auto mt-4">
-            <button class="text-green m-4  text-large bg-sub-color border-2 border-white font-light  p-4 rounded-xl"
-                id="link_copy_btn">ご褒美を承認する</button>
+        <!-- ボタン　-->
+        <div class="flex gap-5 justify-center mt-10">
+            <button class="bg-green border-b-4 border-white shadow-lg   rounded-xl text-comment text-center p-4"
+                id="back_button">戻る</button>
+            <button class="bg-skyblue border-b-4 border-white shadow-lg  rounded-xl text-comment text-center p-4"
+                id="submit_button">承認</button>
         </div>
+
     </main>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

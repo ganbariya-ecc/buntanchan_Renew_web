@@ -1,49 +1,132 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>管理者タスクリスト画面</title>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../../../style.css">
-    </head>
-    <body class="bg-main-color font-main">
-        <!-- header要素 -->
-        <header class="h-40 p-3 flex items-center">
-            <!-- iconとalarmの画像配置 -->
-            <div class="flex items-center m-2 gap-2 absolute right-1">
-                <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
-                <img class="w-12 h-auto bg-white rounded-full" src="../../images/icon.png" alt="icon" id="UserIcon" />
-            </div>
-        </header>
-        <!-- main要素 -->
-        <main>
-            <!-- タイトルとタスク新規作成ボタン -->
-            <div class="flex justify-between items-center my-6">
-                <h1 class="text-title text-green ml-8">お手伝いリスト</h1>
-                <button id="task_create_btn" class="flex justify-between items-center bg-sub-color border-4 border-white rounded-full mt-8 mr-20 py-2 px-6">
-                        <span class="material-icons flex items-center justify-center text-white bg-green rounded-full text-5xl h-12 w-12 mr-4">add_circle</span>
-                        <p class="text-comment mr-2">新規</p>
-                </button>
-            </div>
-            <!-- タスクの表示コンテナ -->
-            <div class="bg-sub-color border-4 border-white rounded-3xl h-[75dvh] w-5/6 mx-auto mt-12 shadow-md">
-                <!-- ユーザーの選択 -->
-                <select class="block text-comment text-center border-4 rounded-3xl border-white w-3/5 mx-auto mt-8" id="userSelect">
-                    <!-- jsでオプションを追加 -->
-                </select>
-                <!-- タスクの表示 -->
-                <div class="mt-6" id="taskList">
-                    <!-- jsでタスクの表示 -->
-                </div>
-            </div>
-        </main>
 
-        <script src="/statics/config.js"></script>
-        <script src="/statics/utils/authsdk.js"></script>
-        <script src="/statics/utils/group/current.js"></script>
-        <script src="../task.js"></script>
-        <script src="./script/list.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>管理者タスクリスト画面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Material Iconsフォント -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Google Fontsの事前接続 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Kiwi Maruフォント -->
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <!-- Yusei Magicフォント -->
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <!-- カスタムスタイルシート -->
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../hamburger_menu.css">
+
+</head>
+
+<body class="font-main bg-main-color overflow-hidden h-screen">
+    <!-- グレイレイヤー（背景暗くするため） -->
+    <div class="overlay">
+    </div>
+
+    <!-- ヘッダー -->
+    <header class="h-28  flex items-center">
+        <!-- ハンバーガーメニューのボタン -->
+        <button type="button" class="btn js-btn">
+            <span class="btn-line"></span>
+        </button>
+
+        <!-- ハンバーガーメニューのナビゲーション -->
+        <nav>
+            <ul class="menu text-left lex-1 flex flex-col">
+                <!-- メニュー項目 -->
+                <li class="menu-list"><a href="#"
+                        class="text-comment text-green py-4 px-8 mt-16 block font-title">ぶんたんちゃん</a>
+                </li>
+
+                <li class="menu-list"><a href="#" class=" text-green text-small py-2 px-4 block hover:text-skyblue">
+                    <!-- ホームのアイコンとテキスト -->
+                    <i class="material-icons text-green hover:text-skyblue">home</i>
+                    ホーム</a></li>
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- ご褒美のアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">new_releases</i>
+                        ご褒美管理</a></li>
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- グループのアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">group</i>
+                        グループ管理</a></li>
+                <li class="menu-list"><a href="#" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- ポイントのアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">favorite</i>
+                        ポイント管理</a></li>
+                <li class="menu-list"><a href="" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- 予定のアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">menu_book</i>
+                        予定管理</a></li>
+                <li class="menu-list"><a href="" class=" text-green text-small py-6 px-4 block hover:text-skyblue">
+                        <!-- 予定のアイコンとテキスト -->
+                        <i class="material-icons text-green hover:text-skyblue">settings</i>
+                        設定</a></li>
+                <li class="flex-grow"></li>
+                <li class="menu-list"><a href="#" class=" text-green text-large py-4 px-6 block hover:text-skyblue">
+                        <!-- ログアウトのアイコンとテキスト -->
+                        <i class="material-icons text-main-font-color hover:text-skyblue">logout</i>
+                        ログアウト</a></li>
+            </ul>
+        </nav>
+
+        <!-- ヘッダー右側のアイコンと通知 -->
+        <div class="flex   mr-3 gap-2 absolute right-1">
+            <span id="noti icons"><i class="material-icons text-green text-2xl h-auto">notifications</i></span>
+            <img class="w-12 h-auto bg-white rounded-full" src="../../images/icon.png" alt="icon" id="UserIcon" />
+        </div>
+    </header>
+    <!-- main要素 -->
+    <main class="flex-col items-end mt-1 ">
+        <!-- タイトルとタスク新規作成ボタン -->
+        <div class="flex justify-normal items-center my-2">
+            <h1 class="text-comment text-green ml-8">お手伝いリスト</h1>
+            <button id="task_create_btn"
+                class="mr-10  px-8">
+                <span
+                    class="material-icons flex items-center justify-center text-white bg-green rounded-full text-5xl h-12 w-12 mr-4">add_circle</span>
+                <!-- <p class="text-large mr-2">新規</p> -->
+            </button>
+        </div>
+        <!-- タスクの表示コンテナ -->
+        <div class="bg-sub-color border-2 border-white rounded-xl h-[50dvh] w-5/6 mx-auto mt-2 shadow-md">
+            <!-- ユーザーの選択 -->
+            <select class="block text-large text-center border-2 rounded-xl border-white w-3/5 mx-auto mt-2"
+                id="userSelect">
+                <!-- jsでオプションを追加 -->
+            </select>
+            <!-- タスクの表示 -->
+            <div class="mt-6" id="taskList">
+                <!-- jsでタスクの表示 -->
+            </div>
+        </div>
+        <div class="flex justify-normal items-center my-2">
+            <h1 class="text-comment text-green ml-8">お断りリスト</h1>
+        </div>
+        <!-- タスクの表示コンテナ -->
+        <div class="bg-sub-color border-2 border-white rounded-xl h-[20dvh] w-5/6 mx-auto mt-2 shadow-md">
+            <!-- ユーザーの選択 -->
+            <select class="block text-large text-center border-2 rounded-xl border-white w-3/5 mx-auto mt-2"
+                id="userSelect">
+                <!-- jsでオプションを追加 -->
+            </select>
+            <!-- タスクの表示 -->
+            <div class="mt-6" id="taskList">
+                <!-- jsでタスクの表示 -->
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../../../script/hamburger_menu.js"></script>
+    <script src="/statics/config.js"></script>
+    <script src="/statics/utils/authsdk.js"></script>
+    <script src="/statics/utils/group/current.js"></script>
+    <script src="../task.js"></script>
+    <script src="./script/list.js"></script>
+</body>
+
 </html>

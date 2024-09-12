@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログアウト</title>
+</head>
+<body>
+    <script src="/statics/config.js"></script>
+    <script>
+        async function Logout() {
+            const req = await fetch("/auth/logout",{
+                method: "POST"
+            })
+
+            if (req.status != 200) {
+                alert("ログアウトに失敗しました");
+                return;
+            }
+
+            window.location.href = Login_Page;
+        }
+
+        Logout();
+    </script>
+</body>
+</html>

@@ -2,12 +2,7 @@
 let users = [];
 
 // タスク一覧
-let tasks_list = [
-    // { id: 1, name: "</span><h1>hello</h1><span>", completed: false },
-    // { id: 2, name: "かいもの", completed: true },
-    // { id: 3, name: "せんたく", completed: true },
-    // { id: 4, name: "そうじ", completed: true },
-];
+let tasks_list = [];
 
 // ユーザーアイコンエリア
 const UserIcon = document.getElementById("UserIcon");
@@ -22,6 +17,11 @@ async function main() {
 
         // 現在のグループメンバーを取得
         const members = await GetCurrentMembers();
+
+        users.push({
+            id: "-1",
+            name: "ALL",
+        })
 
         members.forEach((member) => {
             users.push({
@@ -41,7 +41,7 @@ async function main() {
 
         tasks.forEach((task) => {
             console.log(task);
-            tasks_list.push({ id: task["CreatorID"], name: task["TaskName"], completed: false });
+            tasks_list.push({ id: task["CreatorID"], name: task["TaskName"], completed: false,OrderTargetID: task["OrderTargetID"] });
         })
 
         showTasks();
@@ -60,35 +60,43 @@ task_create_btn.addEventListener("click", function (evt) {
     window.location.href = "../create/create.html";
 })
 
+const userSelect = document.getElementById('userSelect');
 
 // ユーザーをオプションに追加する関数
 function addUserOptions() {
-    const userSelect = document.getElementById('userSelect');
-
     users.forEach(user => {
         const option = document.createElement('option');
         option.value = user.id;
         option.textContent = user.name;
         userSelect.appendChild(option);
     });
+
+    userSelect.addEventListener("change",function(evt){
+        showTasks();
+    })
 }
 
 // タスクを表示する関数
 function showTasks() {
     const taskList = document.getElementById('taskList');
+    taskList.innerHTML = "";
 
     tasks_list.forEach(task => {
-        const taskItem = document.createElement('div');
-        taskItem.className = 'flex items-center my-4 pl-16';
 
-        taskItem.innerHTML = `
-            <span class="material-icons text-comment ml-8 ${task.completed ? 'text-completed' : 'text-incomplete'}">check_circle</span>
-            <span class="text-large ml-16 overflow-x-hidden ">${task.name}</span>
-        `;
-        taskList.appendChild(taskItem);
+        if (userSelect.value == task["OrderTargetID"] || userSelect.value == "-1") {
 
-        taskItem.addEventListener("click", function (evt) {
-            window.location.href = `/statics/admin/task/info/info.html?taskid=${task.id}`;
-        })
+            const taskItem = document.createElement('div');
+            taskItem.className = 'flex items-center my-4 pl-16';
+
+            taskItem.innerHTML = `
+                <span class="material-icons text-comment ml-8 ${task.completed ? 'text-completed' : 'text-incomplete'}">check_circle</span>
+                <span class="text-large ml-16 overflow-x-hidden ">${task.name}</span>
+            `;
+            taskList.appendChild(taskItem);
+
+            taskItem.addEventListener("click", function (evt) {
+                window.location.href = `/statics/admin/task/info/info.html?taskid=${task.id}`;
+            })
+        }
     });
 }

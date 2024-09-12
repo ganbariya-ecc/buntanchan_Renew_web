@@ -1,10 +1,86 @@
+// ユーザーアイコンエリア
+const UserIcon = document.getElementById("UserIcon");
+
+let url_string = window.location.href;
+// 文字列としてのURLをURLオブジェクトに変換する。
+let url = new URL(url_string);
+// URLオブジェクトのsearchParamsのget関数でIDがdの値を取得する。
+let taskid = url.searchParams.get("taskid");
+
+// タスク画像を表示するimg
+const task_image = document.getElementById("task_image");
+
+async function main() {
+    try {
+        if (await IsMember()) {
+            // Memberの場合
+            window.location.href = Member_Home;
+            return;
+        }
+
+        // アイコン設定
+        UserIcon.src = await GetIcon();
+
+        console.log(taskid);
+
+        // 画像を取得する
+        const imgBlob = await GetImg(taskid);
+        if (imgBlob) {
+            // 画像を表示
+            task_image.src = URL.createObjectURL(imgBlob);
+        }
+
+        // タスクの詳細取得
+        const taskData = await GetTaskInfo(taskid);
+
+        console.log(taskData["result"]);
+
+        // データを追加
+        tasks.push(
+            {
+                title: taskData["result"]["TaskName"],
+                deadline: taskData["result"]["ExpirationDate"],
+                status_message: ConvertMsg(taskData["result"]["Status"]),
+                task_message: taskData["result"]["Explanation"]
+            }
+        )
+
+        InitTask();
+    } catch (ex) {
+        console.error(ex);
+        window.location.href = Login_Group;
+        return;
+    }
+}
+
+function ConvertMsg(taskStatus) {
+    switch (taskStatus) {
+        case "InProgress":
+            return "進行中";
+            break;
+        case "Reported":
+            return "報告済み"
+            break;
+        case "Completed":
+            return "完了済み";
+            break;
+        case "Rejected":
+            return "拒否済み"
+            break;
+    }
+
+    return "";
+}
+
+main();
+
 function secToDayTime(seconds) {
     const day = Math.floor(seconds / 86400);
     const hour = Math.floor((seconds % 86400) / 3600);
     const min = Math.floor((seconds % 3600) / 60);
     const sec = seconds % 60;
     let time = '';
-    
+
     if (day !== 0) {
         time = `${day}日${hour}時間${min}分${sec}秒`;
     } else if (hour !== 0) {
@@ -14,7 +90,7 @@ function secToDayTime(seconds) {
     } else {
         time = `${sec}秒`;
     }
-    
+
     return time;
 }
 
@@ -27,7 +103,7 @@ function Show_CountDown(deadline_unix) {
 
         if (distance < 0) {
             clearInterval(interval);
-            document.getElementById('countdown').innerHTML =`<span class="text-comment">カウントダウン終了</span>`;
+            document.getElementById('countdown').innerHTML = `<span class="text-comment">カウントダウン終了</span>`;
         } else {
             document.getElementById('countdown_time').textContent = secToDayTime(distance);
         }
@@ -35,25 +111,13 @@ function Show_CountDown(deadline_unix) {
 }
 
 // サンプルデータの配列
-const tasks = [
-    {
-        title: "かいもの",
+let tasks = [];
 
-        deadline: '2024-09-20T00:00:00',
-
-        status_message: "手伝ってください！",
-        task_message: "ライフスーパーにパスタソースをかってほしい。<br>じぶんが好きなあじをえらんでもいいよ。<br>おねがい"
-    }
-];
-
-// タスクのタイトルと締め切りを指定
-document.addEventListener('DOMContentLoaded', () => {
-
+function InitTask() {
     // サンプルデータの取得
     const task = tasks[0];
 
     const taskTitle = task.title;
-    const deadline = new Date(task.deadline);
     const task_status_message = task.status_message;
     const task_message = task.task_message;
 
@@ -62,6 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('task_message').innerHTML = task_message;
 
     // 締め切りをUNIXタイムスタンプに変換してカウントダウンを開始
-    const deadlineUnix = Math.floor(deadline.getTime() / 1000);
-    Show_CountDown(deadlineUnix);
-});
+    Show_CountDown(task.deadline);
+}
+
+const back_button = document.getElementById("back_button");
+back_button.addEventListener("click",function(evt){
+    window.location.href = "../list/list.html";
+})

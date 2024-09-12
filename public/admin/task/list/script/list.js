@@ -41,7 +41,7 @@ async function main() {
 
         tasks.forEach((task) => {
             console.log(task);
-            tasks_list.push({ id: task["CreatorID"], name: task["TaskName"], completed: false,OrderTargetID: task["OrderTargetID"] });
+            tasks_list.push({ id: task["TaskID"], name: task["TaskName"], completed: false,OrderTargetID: task["OrderTargetID"] });
         })
 
         showTasks();

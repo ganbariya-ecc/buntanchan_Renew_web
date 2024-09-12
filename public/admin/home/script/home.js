@@ -1,3 +1,5 @@
+const UserIcon = document.getElementById("UserIcon");
+
 async function main() {
     try {
         if (await IsMember()) {
@@ -5,6 +7,8 @@ async function main() {
             window.location.href = Member_Home;
             return;
         }
+
+        UserIcon.src = await GetIcon();
     } catch (ex) {
         console.error(ex);
         window.location.href = Login_Group;

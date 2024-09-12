@@ -111,4 +111,7 @@ task_create_form.addEventListener("submit", async function (evt) {
     }
 
     console.log(await req.json());
+
+    // 画面遷移
+    window.location.href = "../list/list.html";
 })

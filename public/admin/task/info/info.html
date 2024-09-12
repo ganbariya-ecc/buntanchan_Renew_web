@@ -31,7 +31,7 @@
         <div class="flex-grow">
             <!-- タスクタイトル表示 -->
             <div class="flex justify-center items-end mt-8 pb-4">
-                <h1 class="text-comment font-bold flex justify-center items-end text-green">タスクのタイトル</h1>
+                <h1 id="task_title" class="text-comment font-bold flex justify-center items-end text-green">タスクのタイトル</h1>
             </div>
             <!-- タスクのステータス -->
             <div class="flex border-white bg-sub-color border-2 mx-auto w-4/6 h-auto items-center rounded-xl my-3">
@@ -48,11 +48,11 @@
 
                 <!-- イメージ画像　-->
                 <div class="rounded-xl overflow-hidden h-3/6 mt-2">
-                    <img src="./image/404.jpg" alt="Task Image" class="w-full h-full" id="task-image" />
+                    <img src="./image/404.jpg" alt="Task Image" class="w-full h-full" id="task_image" />
                 </div>
                 <!-- メッセージコンテナ -->
                 <div class="mt-14 h-32 w-full overflow-scroll border-2 border-white bg-sub-color p-2 rounded-3xl">
-                    <p class="leading-normal tracking-widest text-tiny" id="task-message">ご褒美に対するメッセージを表示</p>
+                    <p id="task_message" class="leading-normal tracking-widest text-tiny" id="task-message">ご褒美に対するメッセージを表示</p>
                 </div>
             </div>
         </div>
@@ -68,6 +68,7 @@
     <script src="/statics/config.js"></script>
     <script src="/statics/utils/authsdk.js"></script>
     <script src="/statics/utils/group/current.js"></script>
+    <script src="../task.js"></script>
 
     <script src="./script/info.js"></script>
 </body>

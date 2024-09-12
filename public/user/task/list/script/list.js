@@ -73,6 +73,10 @@ function InitTask() {
                 <span class="text-6xl ml-16">${task.name}</span>
             `;
             myTasksContainer.appendChild(taskItem);
+
+            taskItem.addEventListener("click",function(evt){
+                window.location.href = "/statics/user/task/info/info.html?taskid=" + task.id;
+            })
         });
     }
 }

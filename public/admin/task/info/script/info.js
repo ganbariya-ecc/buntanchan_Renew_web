@@ -1,6 +1,9 @@
 // ユーザーアイコンエリア
 const UserIcon = document.getElementById("UserIcon");
 
+// サンプルデータの配列
+let tasks = [];
+
 let url_string = window.location.href;
 // 文字列としてのURLをURLオブジェクトに変換する。
 let url = new URL(url_string);
@@ -48,7 +51,7 @@ async function main() {
         InitTask();
     } catch (ex) {
         console.error(ex);
-        window.location.href = Login_Group;
+        // window.location.href = Login_Group;
         return;
     }
 }
@@ -105,13 +108,11 @@ function Show_CountDown(deadline_unix) {
             clearInterval(interval);
             document.getElementById('countdown').innerHTML = `<span class="text-comment">カウントダウン終了</span>`;
         } else {
-            document.getElementById('countdown_time').textContent = secToDayTime(distance);
+            document.getElementById('countdown').textContent = secToDayTime(distance);
         }
     }, 1000);
 }
 
-// サンプルデータの配列
-let tasks = [];
 
 function InitTask() {
     // サンプルデータの取得

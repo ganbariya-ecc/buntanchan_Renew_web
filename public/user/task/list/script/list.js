@@ -67,10 +67,10 @@ function InitTask() {
         myTasksContainer.className = 'w-5/6 h-[50dvh] mx-auto bg-sub-color border-4 border-white rounded-3xl overflow-y-scroll';
         myTasks.forEach(task => {
             const taskItem = document.createElement('div');
-            taskItem.className = 'flex items-center my-16 pl-32';
+            taskItem.className = 'flex items-center my-4 pl-16';
             taskItem.innerHTML = `
-                <span class="material-icons text-icon-xl ${task.completed ? 'text-completed' : 'text-incomplete'}">check_circle</span>
-                <span class="text-6xl ml-16">${task.name}</span>
+                <span class="material-icons text-comment ml-8 ${task.completed ? 'text-completed' : 'text-incomplete'}">check_circle</span>
+                <span class="text-large ml-16 overflow-x-hidden">${task.name}</span>
             `;
             myTasksContainer.appendChild(taskItem);
         });

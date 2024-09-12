@@ -65,6 +65,12 @@ async function GetInfo() {
     return null;
 }
 
+async function GetIcon() {
+    const myInfo = await GetInfo();
+
+    return "/auth/icon/" + myInfo["UserID"];
+}
+
 async function RequireAuth() {
     try {
         const myInfo = await GetInfo();

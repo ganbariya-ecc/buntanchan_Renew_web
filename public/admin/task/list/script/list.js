@@ -61,7 +61,7 @@ function showTasks() {
 
     tasks.forEach(task => {
         const taskItem = document.createElement('div');
-        taskItem.className = 'flex items-center my-16 pl-32';
+        taskItem.className = 'flex items-center my-8 pl-16';
 
         taskItem.innerHTML = `
             <span class="material-icons text-icon-xl ${task.completed ? 'text-completed' : 'text-incomplete'}">check_circle</span>

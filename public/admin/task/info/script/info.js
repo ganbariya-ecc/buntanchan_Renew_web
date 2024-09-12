@@ -38,7 +38,9 @@ function Show_CountDown(deadline_unix) {
 const tasks = [
     {
         title: "かいもの",
+
         deadline: '2024-09-20T00:00:00',
+
         status_message: "手伝ってください！",
         task_message: "ライフスーパーにパスタソースをかってほしい。<br>じぶんが好きなあじをえらんでもいいよ。<br>おねがい"
     }

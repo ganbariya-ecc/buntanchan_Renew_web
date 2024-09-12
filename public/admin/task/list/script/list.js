@@ -65,7 +65,7 @@ function showTasks() {
 
         taskItem.innerHTML = `
             <span class="material-icons text-icon-xl ${task.completed ? 'text-completed' : 'text-incomplete'}">check_circle</span>
-            <span class="text-sub ml-16">${task.name}</span>
+            <span class="text-large ml-16">${task.name}</span>
         `;
         taskList.appendChild(taskItem);
     });

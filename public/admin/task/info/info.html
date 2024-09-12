@@ -1,58 +1,71 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>タスク詳細画面</title>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../../../style.css">
-    </head>
 
-    <body class="bg-main-color font-main">
-        <!-- header要素 -->
-        <header class="h-40 p-3 flex items-center">
-            <!-- iconとalarmの画像配置 -->
-            <div class="flex items-center m-2 gap-2 absolute right-1">
-                <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
-                <img class="w-12 h-auto bg-white rounded-full" src="../../images/icon.png" alt="icon" id="UserIcon" />
-            </div>
-        </header>
-        <!-- main要素 -->
-        <main class="flex flex-col">
-            <div class="flex-grow">
-            <!-- タスクタイトル表示 -->
-                <h1 class="text-title text-center text-green font-bold tracking-widest mt-[2dvh]" id="task_title">タスクのタイトル</h1>
-                <!-- タスクのステータス -->
-                <div class="flex items-center bg-sub-color border-4 border-white rounded-3xl h-40 w-4/5 mx-auto mt-[4dvh]">
-                    <span class="material-icons text-icon-xl text-orange-500 ml-12">notifications</span>
-                    <span class="ml-6 text-[40px]" id="status-message">ステータスメッセージの表示</span>
-                </div>
-                <!-- タスクの残り時間の表示 -->
-                <div class="flex items-center justify-center h-44" id="countdown">
-                    <span class="text-red-400 text-countdown" id="countdown_time"></span>
-                </div>
-                <!-- 画像の表示 -->
-                <div class="mx-auto w-[720px] h-[540px]">
-                    <img src="./image/404.jpg" id="task_image" class="rounded-3xl border-4 border-white h-full w-full object-cover" />
-                </div>
-                <!-- タスクに対するメッセージの表示 -->
-                <div class="h-72 w-[720px] mx-auto mt-[2dvh]"> 
-                    <p id="task_message" class="text-comment leading-normal tracking-widest">タスクメッセージ</p>
-                </div>
-            </div>
-            <!-- ボタン　-->
-            <div class="flex gap-5 justify-center mt-[6dvh]">
-                <button class="bg-green border-4 border-white shadow-lg w-80 h-32 rounded-3xl text-text text-center mr-20" id="back_button">戻る</button>
-                <button class="bg-skyblue border-4 border-white shadow-lg w-80 h-32 rounded-3xl text-text text-center" id="submit_button">報告する</button>
-            </div>
-        </main>
+<head>
+    <meta charset="UTF-8">
+    <title>タスク詳細画面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Material Iconsフォント -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Google Fontsの事前接続 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Kiwi Maruフォント -->
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <!-- Yusei Magicフォント -->
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <!-- カスタムスタイルシート -->
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+
+<body class="font-main bg-main-color overflow-hidden">
+
+    <!-- ヘッダー -->
+    <header class="h-28  flex items-center">
+        <!-- ヘッダー右側のアイコンと通知 -->
+        <div class="flex items-center m-2 gap-2 absolute right-1">
+            <span id="noti icons"><i class="material-icons text-green text-4xl">notifications</i></span>
+            <img class="w-12 h-auto bg-white rounded-full" src="../../images/icon.png" alt="icon" id="UserIcon" />
+        </div>
+    </header>
+    <!-- main要素 -->
+    <main class="flex-col items-end mt-1 px-8">
+        <!-- タスクタイトル表示 -->
+        <div class="flex justify-center items-end mt-8 pb-4">
+            <h1 class="text-comment font-bold flex justify-center items-end text-green">タスクのタイトル</h1>
+        </div>
+        <!-- 現在のステータスを表示 -->
+        <div class="flex border-white bg-sub-color border-4 mx-auto w-4/6 h-auto items-center rounded-2xl my-3">
+            <span class="material-icons text-green ml-8" style="font-size: 40px;">notifications</span>
+            <span class="ml-6 text-small" id="status-message">ステータス</span>
+        </div>
+        <!-- タスクの残り時間の表示 -->
+        <div class="flex items-center justify-center h-8" id="countdown">
+            <span class="text-red-400 text-countdown" id="countdown_time"></span>
+        </div>
+        <!-- イメージ画像　-->
+        <div class="rounded-xl overflow-hidden h-3/6 mt-2">
+            <img src="./image/404.jpg" alt="Task Image" class="w-full h-full" id="task-image" />
+        </div>
+        <!-- メッセージコンテナ -->
+        <div class="mt-14 h-32 w-full overflow-scroll border-2 border-white bg-sub-color p-2 rounded-3xl">
+            <p class="leading-normal tracking-widest text-tiny" id="task-message">タスクに対するメッセージを表示</p>
+        </div>
+        <!-- ボタン　-->
+        <!-- ボタン　-->
+        <div class="flex gap-5 justify-center mt-10">
+            <button class="bg-green border-b-4 border-white shadow-lg   rounded-xl text-comment text-center p-4"
+                id="back_button">戻る</button>
+            <button class="bg-skyblue border-b-4 border-white shadow-lg  rounded-xl text-comment text-center p-4"
+                id="submit_button">報告する</button>
+        </div>
+    </main>
 
 
-        <script src="/statics/config.js"></script>
-        <script src="/statics/utils/authsdk.js"></script>
-        <script src="/statics/utils/group/current.js"></script>
+    <script src="/statics/config.js"></script>
+    <script src="/statics/utils/authsdk.js"></script>
+    <script src="/statics/utils/group/current.js"></script>
 
-        <script src="./script/info.js"></script>
-    </body>
+    <script src="./script/info.js"></script>
+</body>
+
 </html>

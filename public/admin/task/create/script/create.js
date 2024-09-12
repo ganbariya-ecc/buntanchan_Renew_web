@@ -110,7 +110,30 @@ task_create_form.addEventListener("submit", async function (evt) {
         return;
     }
 
-    console.log(await req.json());
+    // 作成したタスクIDを取得
+    const create_result = await req.json();
+    const taskid = create_result["result"];
+
+    // ファイルをアップロード
+    const payload = new FormData();
+    // ファイルを追加
+    payload.append("img",task_image);
+
+    // ファイルをアップロード
+    const imgReq = await fetch("/task/upimg",{
+        method: "POST",
+        headers : {
+            "Authorized" : atoken,
+            "taskid" : taskid
+        },
+        body: payload
+    });
+
+    // 成功したか
+    if (imgReq.status != 200) {
+        console.log(await imgReq.text());
+        return;
+    }
 
     // 画面遷移
     window.location.href = "../list/list.html";

@@ -64,7 +64,7 @@ function showTasks() {
         taskItem.className = 'flex items-center my-4 pl-16';
 
         taskItem.innerHTML = `
-            <span class="material-icons text-comment ml-4 ${task.completed ? 'text-completed' : 'text-incomplete'}">check_circle</span>
+            <span class="material-icons text-comment ml-8 ${task.completed ? 'text-completed' : 'text-incomplete'}">check_circle</span>
             <span class="text-large ml-16">${task.name}</span>
         `;
         taskList.appendChild(taskItem);

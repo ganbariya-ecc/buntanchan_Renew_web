@@ -1,6 +1,9 @@
 // ユーザーアイコンエリア
 const UserIcon = document.getElementById("UserIcon");
 
+// 確定ボタン
+const submit_button = document.getElementById("submit_button");
+
 // サンプルデータの配列
 let tasks = [];
 
@@ -33,10 +36,12 @@ async function main() {
             task_image.src = URL.createObjectURL(imgBlob);
         }
 
+        // 自信のデータ取得
+        const myData = await GetInfo();
+
         // タスクの詳細取得
         const taskData = await GetTaskInfo(taskid);
-
-        console.log(taskData["result"]);
+        const TaskInfo = taskData["result"];
 
         // データを追加
         tasks.push(
@@ -48,10 +53,48 @@ async function main() {
             }
         )
 
+        // 他の人向けの場合
+        if (myData["UserID"] != TaskInfo["OrderTargetID"]) {
+            submit_button.textContent = "削除";
+
+            submit_button.addEventListener("click",async function (evt) {
+                // 確認
+                if (!confirm("削除しますか")) {
+                    return;
+                }
+
+                // JWT 取得
+                const token = await GetJwt();
+
+                // 削除リクエスト
+                const req = await fetch("/task/del",{
+                    method: "DELETE",
+                    headers : {
+                        "Authorized" : token,
+                        "taskid" : taskid
+                    }
+                })
+
+                // エラー処理
+                if (req.status != 200) {
+                    alert("削除失敗");
+                    return;
+                }
+
+                // Admin Home 
+                window.location.href = Admin_Home;
+            })
+        } else {
+            // 自分向けの場合
+            submit_button.addEventListener("click",function(evt) {
+                window.location.href = "/statics/common/report/report.html?taskid=" + taskid;
+            });
+        }
+
         InitTask();
     } catch (ex) {
         console.error(ex);
-        // window.location.href = Login_Group;
+        window.location.href = Login_Group;
         return;
     }
 }
